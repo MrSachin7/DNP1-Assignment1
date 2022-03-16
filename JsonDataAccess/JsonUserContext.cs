@@ -6,7 +6,7 @@ namespace JsonDataAccess;
 
 public class JsonUserContext {
     private string userPath = "users.json";
-    private ICollection<User> users;
+    private ICollection<User>? users;
 
     public ICollection<User> Users {
         get {

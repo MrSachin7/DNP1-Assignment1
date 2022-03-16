@@ -1,0 +1,28 @@
+﻿@page "/Create-Forum"
+@using Contracts
+@using Entities.Models
+@inject IForumService forumService
+<h3>CreateForum</h3>
+
+@code {
+    private Forum newForumItem = new Forum();
+    private string errorLabel = string.Empty;
+    private bool showModal;
+
+    private async Task addForum() {
+        try {
+            await forumService.AddForumAsync(newForumItem);
+            showModal = true;
+            newForumItem = new Forum();
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+    }
+
+    private void Proceed() {
+        showModal = false;
+        // TODO navigate to new window using the navigationMgr
+    }
+
+}

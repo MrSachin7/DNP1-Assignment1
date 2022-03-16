@@ -1,0 +1,56 @@
+﻿@page "/All-Posts"
+@using Entities.Models
+@using Contracts
+@inject IForumService forumService
+
+@if (allPosts == null) {
+    <p>
+        <em> Loading....</em>
+    </p>
+}
+else if (!allPosts.Any()) {
+    <p>
+        <em> No posts available...</em>
+    </p>
+}
+else {
+@foreach (Post post in allPosts) {
+    <div class="row">
+        <div class="col-6">
+            <div class="forum-container">
+                <label class="username">
+                    @post.WrittenBy.Username
+                </label>
+                <br/>
+                <label class="post-header" @onclick="@(() => OpenPost(post))">
+                    @post.Header
+                </label>
+                <br/>
+                <label class="post-description" @onclick="@(() => OpenPost(post))">
+                    @DescriptionToDisplay(post)
+                </label>
+            </div>
+        </div>
+    </div>
+}
+}
+
+
+@code {
+    private List<Post> allPosts;
+
+    protected override async Task OnInitializedAsync() {
+        // allPosts = await forumService.GetAllPostsAsync();
+    }
+
+    private async Task OpenPost(Post post) {
+    }
+
+    private string DescriptionToDisplay(Post post) {
+        if (post.Body.Length <= 200) {
+            return post.Body;
+        }
+        return post.Body.Substring(0, 200);
+    }
+
+}

@@ -12,6 +12,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<JsonUserContext>();
+builder.Services.AddScoped<JsonForumContext>();
+builder.Services.AddScoped<IForumDAO, ForumDAOImpl>();
 builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
 builder.Services.AddScoped<IUserService, UserServiceImpl>();
 

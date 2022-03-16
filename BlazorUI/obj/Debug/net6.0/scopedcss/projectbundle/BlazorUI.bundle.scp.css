@@ -1,3 +1,29 @@
+/* _content/BlazorUI/Pages/AllPosts.razor.rz.scp.css */
+.forum-container[b-gupuyh7gmx]{
+    border: 1px solid grey;
+    margin-bottom: 2.5%;
+    padding: 10px;
+}
+.username[b-gupuyh7gmx]{
+    font-size:small ;
+    cursor: pointer;
+    color: #0A4815;
+    font-weight: bold;
+}
+.username:hover[b-gupuyh7gmx]{
+    text-decoration: underline;
+    color:blue;
+}
+
+.post-header[b-gupuyh7gmx]{
+    cursor: pointer;
+    color: #7B1840;
+    font-weight: bold;
+}
+.post-header:hover[b-gupuyh7gmx]{
+    text-decoration: underline;
+    color:blue;
+}
 /* _content/BlazorUI/Pages/CreateUser.razor.rz.scp.css */
 .card[b-n5as6d9v5g] {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
