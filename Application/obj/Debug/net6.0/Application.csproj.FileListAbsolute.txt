@@ -1,0 +1,17 @@
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Application.deps.json
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Application.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\ref\Application.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Application.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Entities.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Contracts.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\bin\Debug\net6.0\Entities.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.csproj.AssemblyReference.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.AssemblyInfoInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.AssemblyInfo.cs
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.csproj.CoreCompileInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\ref\Application.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Application\obj\Debug\net6.0\Application.pdb

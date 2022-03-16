@@ -1,0 +1,15 @@
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\Contracts.deps.json
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\ref\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\Contracts.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\Entities.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\bin\Debug\net6.0\Entities.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.csproj.AssemblyReference.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfoInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.AssemblyInfo.cs
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.csproj.CoreCompileInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.csproj.CopyComplete
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\ref\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\Contracts\obj\Debug\net6.0\Contracts.pdb
