@@ -4,44 +4,50 @@
 @using UIElements
 @inject IForumService forumService
 
+<AuthorizeView>
+    <Authorized>
+        <div class="box">
+            <h3> Create a Forum</h3>
+            <EditForm Context="formCtx" Model="@newForumItem" OnValidSubmit="@AddForum">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class="form-group field">
+                    <span>
+                        <label> Forum Name :</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
+                    </span>
+                </div>
 
-<div class="box">
-    <h3> Create a Forum</h3>
-    <EditForm Model="@newForumItem" OnValidSubmit="@AddForum">
-        <DataAnnotationsValidator/>
-        <ValidationSummary/>
-        <div class="form-group field">
-            <span>
-                <label> Forum Name :</label>
-            </span>
-            <span>
-                <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
-            </span>
-        </div>
+                <div class="form-group field">
+                    <span>
+                        <label> Description:</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
+                    </span>
+                </div>
 
-        <div class="form-group field">
-            <span>
-                <label> Description:</label>
-            </span>
-            <span>
-                <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
-            </span>
+                <p class="actions">
+                    <button class="acceptbtn" type="submit"> Create Forum</button>
+                </p>
+            </EditForm>
+            @if (!string.IsNullOrEmpty(errorLabel)) {
+                <label> @errorLabel</label>
+            }
+            @if (showModal) {
+                <Modal>
+                    <p>New forum created</p>
+                    <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+                </Modal>
+            }
         </div> 
-        
-        <p class="actions">
-            <button class="acceptbtn" type="submit"> Create Forum</button>
-        </p>
-    </EditForm> 
-    @if (!string.IsNullOrEmpty(errorLabel)) {
-        <label> @errorLabel</label>
-    }
-    @if (showModal) {
-        <Modal>
-            <p>New forum created</p>
-            <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
-        </Modal>
-    }
-</div>
+    </Authorized>
+    <NotAuthorized>
+        <NotLoggedIn/>
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private Forum newForumItem = new Forum();

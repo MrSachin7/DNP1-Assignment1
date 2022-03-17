@@ -1,19 +1,22 @@
 ﻿@page "/All-Posts"
 @using Entities.Models
-@using Contracts
+@using Contracts  
+@using UIElements
 @inject IForumService forumService
 
-@if (allPosts == null) {
-    <p>
-        <em> Loading....</em>
-    </p>
-}
-else if (!allPosts.Any()) {
-    <p>
-        <em> No posts available...</em>
-    </p>
-}
-else {
+<AuthorizeView>  
+    <Authorized>
+    @if (allPosts == null) {
+        <p>
+            <em> Loading....</em>
+        </p>
+    }
+    else if (!allPosts.Any()) {
+        <p>
+            <em> No posts available...</em>
+        </p>
+    }
+    else {
 @foreach (Post post in allPosts) {
     <div class="row">
         <div class="col-6">
@@ -33,22 +36,27 @@ else {
         </div>
     </div>
 }
-}
+    }
+    </Authorized> 
+    <NotAuthorized>
+        <NotLoggedIn/>
+    </NotAuthorized>
+
+</AuthorizeView>
 
 
 @code {
     private List<Post>? allPosts;
 
     protected override async Task OnInitializedAsync() {
-        // allPosts = await forumService.GetAllPostsAsync();
+    // allPosts = await forumService.GetAllPostsAsync();
         allPosts = new List<Post>();
-        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
-                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
-        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
-                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
-        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
-                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
-
+        allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+                                                                            "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
+        allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+                                                                            "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
+        allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+                                                                            "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
     }
 
     private async Task OpenPost(Post post) {
