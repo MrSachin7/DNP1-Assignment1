@@ -42,3 +42,4 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\CreateUser.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\Login.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\NotLoggedIn.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\SubForums.razor.rz.scp.css
