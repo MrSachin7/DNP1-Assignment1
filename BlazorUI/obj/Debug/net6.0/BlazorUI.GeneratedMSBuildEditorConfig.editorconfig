@@ -43,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope = b-77eie43cx2
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlFbGVtZW50c1xNb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-y6l1j2v8r0
 
+[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/UIElements/NotLoggedIn.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlFbGVtZW50c1xOb3RMb2dnZWRJbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-c851v547p7
+
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/User/CreateUser.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxDcmVhdGVVc2VyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-9ns6fcdr3y

@@ -1,9 +1,20 @@
-﻿@namespace UIElements
+﻿@namespace UIElements 
+@inject NavigationManager navMgr;
 
 <div class="card">
-    <h3> You need to be logged in , to create a forum</h3>
+    <h3>@ChildContent </h3>
 </div>
 
+<button class="loginbtn" @onclick="RedirectToLogin"> Login here</button>
+
+
 @code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    private void RedirectToLogin() {
+        navMgr.NavigateTo("/Login");
+    }
 
 }

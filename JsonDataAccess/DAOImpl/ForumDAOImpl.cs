@@ -5,8 +5,6 @@ namespace JsonDataAccess;
 
 public class ForumDAOImpl : IForumDAO {
     private JsonForumContext fileContext;
-
-
     public ForumDAOImpl(JsonForumContext FileContext) {
         this.fileContext = FileContext;
     }
@@ -26,5 +24,9 @@ public class ForumDAOImpl : IForumDAO {
         }
         fileContext.Forums.Add(newForumItem);
         await fileContext.SaveChangesAsync();
+    }
+
+    public async Task<Forum> GetForumByIdAsync(int id) {
+        return fileContext.Forums.First(forum => forum.Id == id);
     }
 }

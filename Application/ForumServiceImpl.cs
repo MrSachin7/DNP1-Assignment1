@@ -19,4 +19,8 @@ public class ForumServiceImpl : IForumService {
        await forumDAO.AddForumAsync(newForumItem);
        
     }
+
+    public async Task<Forum> GetForumByIdAsync(int id) {
+        return await forumDAO.GetForumByIdAsync(id);
+    }
 }
