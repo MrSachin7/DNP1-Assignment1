@@ -1,0 +1,14 @@
+[
+  {
+    "AllSubForums": [],
+    "ForumName": "Computer Science",
+    "ForumDescription": "This is a forum for computer science learners.",
+    "Id": 1
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": ".NET Programming",
+    "ForumDescription": "The idea is to make people interested on .NET programming able to communicate with each other.",
+    "Id": 2
+  }
+]
