@@ -1,28 +1,69 @@
 ﻿@page "/Create-Forum"
 @using Contracts
 @using Entities.Models
+@using UIElements
 @inject IForumService forumService
-<h3>CreateForum</h3>
+
+
+<div class="box">
+    <h3> Create a Forum</h3>
+    <EditForm Model="@newForumItem" OnValidSubmit="@AddForum">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group field">
+            <span>
+                <label> Forum Name :</label>
+            </span>
+            <span>
+                <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
+            </span>
+        </div>
+
+        <div class="form-group field">
+            <span>
+                <label> Description:</label>
+            </span>
+            <span>
+                <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
+            </span>
+        </div> 
+        
+        <p class="actions">
+            <button class="acceptbtn" type="submit"> Create Forum</button>
+        </p>
+    </EditForm> 
+    @if (!string.IsNullOrEmpty(errorLabel)) {
+        <label> @errorLabel</label>
+    }
+    @if (showModal) {
+        <Modal>
+            <p>New forum created</p>
+            <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+        </Modal>
+    }
+</div>
 
 @code {
     private Forum newForumItem = new Forum();
     private string errorLabel = string.Empty;
     private bool showModal;
 
-    private async Task addForum() {
+    private async Task AddForum() {
         try {
             await forumService.AddForumAsync(newForumItem);
             showModal = true;
             newForumItem = new Forum();
+          
         }
         catch (Exception e) {
             errorLabel = e.Message;
+            throw e;
         }
     }
 
     private void Proceed() {
         showModal = false;
-        // TODO navigate to new window using the navigationMgr
+    // TODO navigate to new window using the navigationMgr
     }
 
 }

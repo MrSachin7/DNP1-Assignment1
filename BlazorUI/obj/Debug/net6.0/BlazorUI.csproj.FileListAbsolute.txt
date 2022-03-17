@@ -36,5 +36,7 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\ref\BlazorUI.dll
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.pdb
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.genruntimeconfig.cache
-D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\users.json
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\AllPosts.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\CreateForum.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\Modal.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\users.json

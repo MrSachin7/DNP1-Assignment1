@@ -14,6 +14,7 @@ public class Forum {
     }
 
     public Forum() {
+        AllSubForums = new List<SubForum>();
 
     }
 }

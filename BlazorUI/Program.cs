@@ -16,6 +16,7 @@ builder.Services.AddScoped<JsonForumContext>();
 builder.Services.AddScoped<IForumDAO, ForumDAOImpl>();
 builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
 builder.Services.AddScoped<IUserService, UserServiceImpl>();
+builder.Services.AddScoped<IForumService, ForumServiceImpl>();
 
 var app = builder.Build();
 

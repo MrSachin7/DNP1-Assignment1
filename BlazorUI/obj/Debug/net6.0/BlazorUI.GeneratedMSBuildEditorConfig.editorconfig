@@ -23,6 +23,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUG9zdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -47,9 +51,17 @@ build_metadata.AdditionalFiles.CssScope = b-gupuyh7gmx
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVXNlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-n5as6d9v5g
 
+[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Forum/CreateForum.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW1cQ3JlYXRlRm9ydW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-77eie43cx2
+
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-pcjlt3cvq3
+
+[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/UIElements/Modal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVUlFbGVtZW50c1xNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-y6l1j2v8r0
 
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

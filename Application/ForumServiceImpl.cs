@@ -15,6 +15,8 @@ public class ForumServiceImpl : IForumService {
     //     forumDAO.
     // }
     public async Task AddForumAsync(Forum newForumItem) {
+      //  Console.WriteLine("ForumService");
        await forumDAO.AddForumAsync(newForumItem);
+       
     }
 }
