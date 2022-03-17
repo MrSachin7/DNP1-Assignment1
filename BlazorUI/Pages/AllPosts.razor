@@ -41,6 +41,14 @@ else {
 
     protected override async Task OnInitializedAsync() {
         // allPosts = await forumService.GetAllPostsAsync();
+        allPosts = new List<Post>();
+        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
+                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
+        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
+                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
+        allPosts.Add(new Post("The dotnet watch functionality not working","I am trying to do the Blazor stuff for the past few" +
+                                                                           "days but for some wierd reason the dotnet watch functionality is not working . Please help me",new Entities.Models.User("dotnetGUY","dotnetBolte123")));
+
     }
 
     private async Task OpenPost(Post post) {

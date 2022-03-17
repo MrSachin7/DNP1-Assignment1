@@ -1,15 +1,13 @@
-﻿@page "/Login" 
+﻿@page "/Create-User"
 @using Contracts
-@using Microsoft.AspNetCore.Identity
-@using Microsoft.Win32.SafeHandles
-@inject IUserService userService; 
-@inject NavigationManager navMgr; 
+@inject IUserService userService;
+@inject NavigationManager navMgr;
 
 <div class="card">
-    <h3> Login</h3>
+    <h3> Sign Up</h3>
     <div class="field">
         <label> Username :</label>
-        <input type="text" @bind="username"/>
+        <input type="text" @bind="userName"/>
     </div>
     <div class="field">
         <label> Password :</label>
@@ -22,27 +20,32 @@
         </div>
     }
     <div class="field">
-        <button class="loginbtn" @onclick="LoginAsync"> Login</button>
+        <button class="createButton" @onclick="CreateUserAsync"> Sign Up</button>  
+        <button class="createButton" @onclick="LoginAsync"> LogIn</button>
     </div>
+
 </div>
 
 @code {
-    private string username;
+    private string userName;
     private string password;
     private string errorlabel;
 
-
-    private async Task LoginAsync() {
+    private async Task CreateUserAsync() {
         errorlabel = "";
         try {
-            await userService.LoginAsync(username, password);
-    //   navMgr.NavigateTo("/");
-            errorlabel = $"Hello {username}, logged in..";
-    //
+            await userService.CreateUserAsync(userName, password);
+            navMgr.NavigateTo("/");
+            
         }
         catch (Exception e) {
             errorlabel = $"Error : {e.Message}";
         }
     }
+
+    private async Task LoginAsync() {
+        navMgr.NavigateTo("/Login");
+    }
+
 
 }

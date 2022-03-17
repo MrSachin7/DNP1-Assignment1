@@ -25,8 +25,6 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.RazorAssemblyInfo.cs
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\staticwebassets.build.json
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\staticwebassets.development.json
-D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\CreateUser.razor.rz.scp.css
-D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\bundle\BlazorUI.styles.css
@@ -41,3 +39,5 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\Modal.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\users.json
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\forums.json
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\CreateUser.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\Login.razor.rz.scp.css
