@@ -1,23 +1,23 @@
-﻿@page "/Create-Forum"
-@using Contracts
+﻿@page "/CreateSubForum/{ForumId:int}"
 @using Entities.Models
-@using UIElements
-@inject IForumService forumService
-@inject NavigationManager navMgr
+@using Contracts
+@inject IForumService forumService;
+@inject NavigationManager navMgr;
+
 
 <AuthorizeView>
     <Authorized>
         <div class="box">
-            <h3> Create a Forum</h3>
-            <EditForm Context="formCtx" Model="@newForumItem" OnValidSubmit="@AddForum">
+            <h3> Create a Sub-Forum</h3>
+            <EditForm Context="formCtx" Model="@NewSubForumItem" OnValidSubmit="@((() => AddSubForum(context.User.Identity.Name)))">
                 <DataAnnotationsValidator/>
                 <ValidationSummary/>
                 <div class="form-group field">
                     <span>
-                        <label> Forum Name :</label>
+                        <label> SubForum Title :</label>
                     </span>
                     <span>
-                        <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
+                        <InputTextArea rows="2" @bind-Value="NewSubForumItem.Title"/>
                     </span>
                 </div>
 
@@ -26,7 +26,7 @@
                         <label> Description:</label>
                     </span>
                     <span>
-                        <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
+                        <InputTextArea rows="7" @bind-Value="NewSubForumItem.Description"/>
                     </span>
                 </div>
 
@@ -53,17 +53,19 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@code {
-    private Forum newForumItem = new Forum();
+@code { 
+    [Parameter]
+    public int ForumId { get; set; }
+    private SubForum NewSubForumItem = new SubForum();
     private string errorLabel = string.Empty;
     private bool showModal;
 
-    private async Task AddForum() {
+    private async Task AddSubForum(string username) {
         try {
-            await forumService.AddForumAsync(newForumItem);
+            NewSubForumItem.OwnedBy = new User(username);
+            await forumService.AddSubForumAsync(NewSubForumItem, ForumId);
             showModal = true;
-            newForumItem = new Forum();
-          
+            NewSubForumItem = new SubForum();
         }
         catch (Exception e) {
             errorLabel = e.Message;
@@ -72,7 +74,6 @@
 
     private void Proceed() {
         showModal = false;
-        navMgr.NavigateTo("/Forums");
+         navMgr.NavigateTo($"/SubForums/{ForumId}");
     }
-
 }

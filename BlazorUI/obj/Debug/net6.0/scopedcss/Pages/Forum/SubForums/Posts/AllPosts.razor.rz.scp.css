@@ -1,25 +1,25 @@
-.forum-container[b-gupuyh7gmx]{
+.forum-container[b-aby8fb0kek]{
     border: 1px solid grey;
     margin-bottom: 2.5%;
     padding: 10px;
 }
-.username[b-gupuyh7gmx]{
+.username[b-aby8fb0kek]{
     font-size:small ;
     cursor: pointer;
     color: #0A4815;
     font-weight: bold;
 }
-.username:hover[b-gupuyh7gmx]{
+.username:hover[b-aby8fb0kek]{
     text-decoration: underline;
     color:blue;
 }
 
-.post-header[b-gupuyh7gmx]{
+.post-header[b-aby8fb0kek]{
     cursor: pointer;
     color: #7B1840;
     font-weight: bold;
 }
-.post-header:hover[b-gupuyh7gmx]{
+.post-header:hover[b-aby8fb0kek]{
     text-decoration: underline;
     color:blue;
 }

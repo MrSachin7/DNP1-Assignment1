@@ -1,29 +1,3 @@
-/* _content/BlazorUI/Pages/AllPosts.razor.rz.scp.css */
-.forum-container[b-gupuyh7gmx]{
-    border: 1px solid grey;
-    margin-bottom: 2.5%;
-    padding: 10px;
-}
-.username[b-gupuyh7gmx]{
-    font-size:small ;
-    cursor: pointer;
-    color: #0A4815;
-    font-weight: bold;
-}
-.username:hover[b-gupuyh7gmx]{
-    text-decoration: underline;
-    color:blue;
-}
-
-.post-header[b-gupuyh7gmx]{
-    cursor: pointer;
-    color: #7B1840;
-    font-weight: bold;
-}
-.post-header:hover[b-gupuyh7gmx]{
-    text-decoration: underline;
-    color:blue;
-}
 /* _content/BlazorUI/Pages/Forum/CreateForum.razor.rz.scp.css */
 .box[b-77eie43cx2]{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -44,6 +18,32 @@
 }
 .acceptbtn:hover[b-77eie43cx2]{
     background-color: #00d900;
+}
+/* _content/BlazorUI/Pages/Forum/SubForums/Posts/AllPosts.razor.rz.scp.css */
+.forum-container[b-aby8fb0kek]{
+    border: 1px solid grey;
+    margin-bottom: 2.5%;
+    padding: 10px;
+}
+.username[b-aby8fb0kek]{
+    font-size:small ;
+    cursor: pointer;
+    color: #0A4815;
+    font-weight: bold;
+}
+.username:hover[b-aby8fb0kek]{
+    text-decoration: underline;
+    color:blue;
+}
+
+.post-header[b-aby8fb0kek]{
+    cursor: pointer;
+    color: #7B1840;
+    font-weight: bold;
+}
+.post-header:hover[b-aby8fb0kek]{
+    text-decoration: underline;
+    color:blue;
 }
 /* _content/BlazorUI/Pages/Forum/SubForums/SubForums.razor.rz.scp.css */
 .body[b-xggczduum5] {

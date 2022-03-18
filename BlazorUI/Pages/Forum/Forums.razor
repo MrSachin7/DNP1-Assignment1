@@ -1,0 +1,75 @@
+﻿@page "/Forums"   
+@using Entities.Models
+@using Contracts
+@inject IForumService forumService;
+@inject NavigationManager navMgr;
+
+@if (allForums == null) {
+    <p>
+        <em>
+            Loading...
+        </em>
+    </p>
+}
+else {
+    <button class="btn-outline-primary" @onclick="() =>OpenCreateForum() "> Create forum</button>
+    if (!allForums.Any()) {
+        <p>
+            <em> No forums created yet...</em>
+        </p> 
+   
+    }
+    else {
+        foreach (Forum forum in allForums) {
+            <div class="container d-flex justify-content-center mt-50 mb-50">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card blog-horizontal">
+                            <div class="card-body">
+                                <h5>
+                                    <label class="card-title "> @forum.ForumName</label>
+                                </h5>
+                                <label>@forum.ForumDescription</label>
+                            </div>
+                            <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
+                                <ul class="list-inline list-inline-dotted mb-0">
+                                    <li class="list-inline-item">
+                                        <span class="oi oi-eye"></span> @forum.Views
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span class="oi oi-star" style="color: yellowgreen"></span>
+                                        <span class="oi oi-star"></span>
+                                        <span class="oi oi-star"></span>
+                                        <span class="oi oi-star"></span>
+                                        <span class="text-muted ml-1">(12)</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-2 mt-sm-0">
+                                    <label @onclick="@(() => OpenForum(forum.Id))"> Open forum</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+}
+}
+
+
+@code {
+    private List<Forum>? allForums;
+
+    protected override async void OnInitialized() {
+        allForums = await forumService.GetAllForumsAsync();
+    }
+
+    private void OpenForum(int id) {
+        navMgr.NavigateTo($"SubForums/{id}");
+    }
+
+    private void OpenCreateForum() {
+        navMgr.NavigateTo("/Create-Forum");
+    }
+
+}

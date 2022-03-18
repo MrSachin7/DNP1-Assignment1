@@ -9,6 +9,8 @@ public class SubForum {
 
     public int Views { get; set; }
 
+    public int Id { get; set; }
+
     public ICollection<Post> AllPosts { get; set; }
 
 
@@ -19,5 +21,10 @@ public class SubForum {
         AllPosts = new List<Post>();
         CreatedAt= DateTime.Now;
         Views = 0;
+    }
+
+    public SubForum() {
+        AllPosts = new List<Post>();
+        CreatedAt = DateTime.Now;
     }
 }
