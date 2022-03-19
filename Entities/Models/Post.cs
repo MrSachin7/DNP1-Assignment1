@@ -9,6 +9,9 @@ public class Post {
 
     public int Id { get; set; }
 
+    public ICollection<Comment> Comments { get; set; }
+
     public Post() {
+        Comments = new List<Comment>();
     }
 }

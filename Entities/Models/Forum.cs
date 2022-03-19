@@ -11,13 +11,6 @@ public class Forum {
         set;
     }
 
-    public Forum(string ForumName, string ForumDescritption) {
-        this.ForumName = ForumName;
-        this.ForumDescription = ForumDescritption;
-        AllSubForums = new List<SubForum>();
-        Views = 0;
-
-    }
 
     public Forum() {
         AllSubForums = new List<SubForum>();

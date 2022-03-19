@@ -28,7 +28,7 @@ public class ForumDAOImpl : IForumDAO {
         else {
             newSubForumItem.Id = 1;
         }
-
+        newSubForumItem.CreatedAt= DateTime.Now;
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.Add(newSubForumItem);
         await fileContext.SaveChangesAsync();
     }

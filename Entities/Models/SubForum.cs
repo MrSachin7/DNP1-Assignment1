@@ -14,17 +14,9 @@ public class SubForum {
     public ICollection<Post> AllPosts { get; set; }
 
 
-    public SubForum(User OwnedBy, string Title, string Description) {
-        this.OwnedBy = OwnedBy;
-        this.Title = Title;
-        this.Description = Description;
-        AllPosts = new List<Post>();
-        CreatedAt= DateTime.Now;
-        Views = 0;
-    }
 
     public SubForum() {
         AllPosts = new List<Post>();
-        CreatedAt = DateTime.Now;
+        // CreatedAt = DateTime.Now;
     }
 }
