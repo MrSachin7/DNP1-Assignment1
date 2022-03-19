@@ -11,7 +11,108 @@
         "CreatedAt": "0001-01-01T00:00:00",
         "Views": 0,
         "Id": 1,
-        "AllPosts": []
+        "AllPosts": [
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:06:37.8083352+01:00",
+            "Id": 1
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:06:41.0900961+01:00",
+            "Id": 2
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:13.3383538+01:00",
+            "Id": 3
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:14.182219+01:00",
+            "Id": 4
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:14.3743264+01:00",
+            "Id": 5
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:14.5432555+01:00",
+            "Id": 6
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:15.0644387+01:00",
+            "Id": 7
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:15.3755594+01:00",
+            "Id": 8
+          },
+          {
+            "Header": "Issue with .NET6",
+            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:07:15.5604118+01:00",
+            "Id": 9
+          },
+          {
+            "Header": "Heklp",
+            "Body": "sfsfs",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-19T02:08:52.5342466+01:00",
+            "Id": 10
+          }
+        ]
       },
       {
         "OwnedBy": {
@@ -29,7 +130,7 @@
     "ForumName": "Computer Science",
     "ForumDescription": "A forum for computer science",
     "Id": 1,
-    "Views": 5
+    "Views": 6
   },
   {
     "AllSubForums": [],
