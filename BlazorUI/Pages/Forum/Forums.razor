@@ -66,6 +66,7 @@ else {
 
     private void OpenForum(int id) {
         navMgr.NavigateTo($"SubForums/{id}");
+        forumService.IncrementViewOfForumAsync(id);
     }
 
     private void OpenCreateForum() {

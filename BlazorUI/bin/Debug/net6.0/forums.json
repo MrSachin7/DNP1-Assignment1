@@ -1,16 +1,48 @@
 [
   {
-    "AllSubForums": [],
+    "AllSubForums": [
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": ".NET Programming",
+        "Description": "This sub- forum will contain all the .Net programming stuffs",
+        "CreatedAt": "0001-01-01T00:00:00",
+        "Views": 0,
+        "Id": 1,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "Test",
+        "Description": "Just testing stuffs",
+        "CreatedAt": "2022-03-19T01:00:27.6631612+01:00",
+        "Views": 0,
+        "Id": 2,
+        "AllPosts": []
+      }
+    ],
     "ForumName": "Computer Science",
     "ForumDescription": "A forum for computer science",
     "Id": 1,
-    "Views": 0
+    "Views": 5
   },
   {
     "AllSubForums": [],
     "ForumName": "Football",
     "ForumDescription": "One truth of football .\n Cristiano Ronaldo is the GOAT",
     "Id": 2,
-    "Views": 0
+    "Views": 2
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": "The sigma males",
+    "ForumDescription": "A forum for males who are grinding to become a sigma male",
+    "Id": 3,
+    "Views": 5
   }
 ]

@@ -2,7 +2,8 @@
 @using Entities.Models
 @using Contracts
 @using UIElements
-@inject IForumService forumService
+@inject IForumService forumService 
+@inject NavigationManager navMgr
 
 <AuthorizeView>
     <Authorized>
@@ -11,32 +12,37 @@
                 <em> Loading....</em>
             </p>
         }
-        else if (!SubForumToOpen.AllPosts.Any()) {
-            <p>
-                <em> No posts available...</em>
-            </p>
-        }
         else {
-@foreach (Post post in SubForumToOpen.AllPosts) {
-    <div class="row">
-        <div class="col-6">
-            <div class="forum-container">
-                <label class="username">
-                    @post.WrittenBy.Username
-                </label>
-                <br/>
-                <label class="post-header" @onclick="@(() => OpenPost(post))">
-                    @post.Header
-                </label>
-                <br/>
-                <label class="post-description" @onclick="@(() => OpenPost(post))">
-                    @DescriptionToDisplay(post)
-                </label>
-            </div>
-        </div>
-    </div>
-}
+            <button class="btn-outline-primary" @onclick="() => OpenCreatePost()"> Create Post</button>
+            if (!SubForumToOpen.AllPosts.Any()) {
+                <p>
+                    <em> No posts available...</em>
+                </p>
+            }
+            else {
+                @foreach (Post post in SubForumToOpen.AllPosts) {
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="forum-container">
+                                <label class="username">
+                                    @post.WrittenBy.Username
+                                </label>
+                                <br/>
+                                <label class="post-header" @onclick="@(() => OpenPost(post))">
+                                    @post.Header
+                                </label>
+                                <br/>
+                                <label class="post-description" @onclick="@(() => OpenPost(post))">
+                                    @DescriptionToDisplay(post)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
         }
+        
     </Authorized>
     <NotAuthorized>
         <NotLoggedIn>
@@ -59,7 +65,7 @@
     public int SubForumId { get; set; }
 
     protected override async Task OnInitializedAsync() {
-      //  allPosts = await forumService.GetAllPostsAsync(ForumId, SubForumId); 
+    //  allPosts = await forumService.GetAllPostsAsync(ForumId, SubForumId); 
     //     allPosts = new List<Post>();
     //     allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
     //                                                                         "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
@@ -70,11 +76,9 @@
     // }
 
         SubForumToOpen = await forumService.GetSubForumAsync(ForumId, SubForumId);
-
     }
 
     private async Task OpenPost(Post post) {
-    
     }
 
     private string DescriptionToDisplay(Post post) {
@@ -82,6 +86,10 @@
             return post.Body;
         }
         return post.Body.Substring(0, 200);
+    }
+
+    private void OpenCreatePost() {
+       navMgr.NavigateTo($"/Create-Post/{ForumId}/{SubForumId}");
     }
 
 }

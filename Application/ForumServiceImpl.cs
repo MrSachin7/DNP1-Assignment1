@@ -34,4 +34,16 @@ public class ForumServiceImpl : IForumService {
     public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) {
          await forumDAO.AddSubForumAsync(newSubForumItem, forumId);
     }
+
+    public async Task IncrementViewOfForumAsync(int forumId) {
+        await forumDAO.IncrementViewOfForumAsync(forumId);
+    }
+
+    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) {
+        await forumDAO.AddPostAsync(newPostItem, forumId, subForumId);
+    }
+
+    public void IncrementViewOfForumAsync() {
+        throw new NotImplementedException();
+    }
 }

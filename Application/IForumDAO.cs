@@ -8,4 +8,6 @@ public interface IForumDAO {
     Task<List<Forum>> GetAllForumsAsync();
     Task<SubForum?> GetSubForumAsync(int forumId, int subForumId);
     Task AddSubForumAsync(SubForum newSubForumItem, int forumId);
+    Task IncrementViewOfForumAsync(int forumId);
+    Task AddPostAsync(Post newPostItem, int forumId, int subForumId);
 }

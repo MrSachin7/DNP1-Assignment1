@@ -29,10 +29,28 @@ public class ForumDAOImpl : IForumDAO {
             newSubForumItem.Id = 1;
         }
 
-        foreach (Forum forum in fileContext.Forums.Where(forum => forum.Id == forumId)) {
-            forum.AllSubForums.Add(newSubForumItem);
+        fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.Add(newSubForumItem);
+        await fileContext.SaveChangesAsync();
+    }
+
+    public async Task IncrementViewOfForumAsync(int forumId) {
+        (await GetForumByIdAsync(forumId)).Views++;
+        await fileContext.SaveChangesAsync();
+    }
+
+    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) {
+        SubForum? subForum = (await GetSubForumAsync(forumId, subForumId));
+        if (subForum.AllPosts.Any()) {
+            int largestId = subForum.AllPosts.Max(post => post.Id);
+            newPostItem.Id = largestId + 1;
+        }
+        else {
+            newPostItem.Id = 1;
         }
 
+        newPostItem.CreatedAt = DateTime.Now;
+        fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.First(subForum => subForum.Id == subForumId)
+            .AllPosts.Add(newPostItem);
         await fileContext.SaveChangesAsync();
     }
 

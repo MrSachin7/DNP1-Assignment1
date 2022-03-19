@@ -1,7 +1,7 @@
 ﻿@page "/SubForums/{Id:int}"
 @using Entities.Models
 @using Contracts
-@inject IForumService forumService 
+@inject IForumService forumService
 @inject NavigationManager navMgr
 
 
@@ -19,7 +19,7 @@
     </p>
 }
 else {
-    <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create forum</button>
+    <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
     if (!forumToOpen.AllSubForums.Any()) {
         <p>
             <em> This forum doesnot contain any sub-forums yet</em>
@@ -58,7 +58,7 @@ else {
                                     </li>
                                 </ul>
                                 <div class="mt-2 mt-sm-0">
-                                    <a href="#" data-abc="true" class="course-button"><i class="fa fa-check font-size-base mr-1"></i> Open</a>
+                                    <label @onclick="@(() => OpenPosts(subForum.Id))"> Open </label>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,11 @@ else {
     }
 
     private void OpenCreateSubForum() {
-      navMgr.NavigateTo($"/CreateSubForum/{Id}");  
+        navMgr.NavigateTo($"/CreateSubForum/{Id}");
+    }
+
+    private void OpenPosts(int id) {
+       navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
     }
 
 }
