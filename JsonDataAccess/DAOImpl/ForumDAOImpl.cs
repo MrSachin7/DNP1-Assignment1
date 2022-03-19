@@ -54,6 +54,12 @@ public class ForumDAOImpl : IForumDAO {
         await fileContext.SaveChangesAsync();
     }
 
+    public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
+        (await GetSubForumAsync(forumId, subForumId)).Views++;
+        await fileContext.SaveChangesAsync();
+
+    }
+
     public async Task AddForumAsync(Forum newForumItem) {
         //  Console.WriteLine("ForumDAO");
         if (fileContext.Forums.Any()) {

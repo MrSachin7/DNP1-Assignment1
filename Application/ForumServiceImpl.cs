@@ -43,6 +43,10 @@ public class ForumServiceImpl : IForumService {
         await forumDAO.AddPostAsync(newPostItem, forumId, subForumId);
     }
 
+    public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
+        await forumDAO.IncrementViewOfSubForumAsync(forumId, subForumId);
+    }
+
     public void IncrementViewOfForumAsync() {
         throw new NotImplementedException();
     }
