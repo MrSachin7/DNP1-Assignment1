@@ -1,7 +1,8 @@
 ﻿@page "/ViewPost/{ForumId:int}/{SubForumId:int}/{PostId:int}"
 @using Contracts
 @using Entities.Models
-@inject IForumService forumService;
+@inject IForumService forumService; 
+@inject NavigationManager navMgr
 
 
 
@@ -55,7 +56,7 @@ else {
                                             <AuthorizeView>
                                                 <Authorized>
                                                     @if (context.User.Identity.Name.Equals(comment.Writer.Username)) {
-                                                        <small>Edit</small>
+                                                        <small @onclick="@((() => EditPressed(comment)))">Edit</small>
                                                     }
                                                 </Authorized>
 
@@ -80,6 +81,25 @@ else {
                         </div>
                     </div>
                 </div>
+                @if (showModal) {
+                    <Modal>
+                        <EditForm Context="formCtx" Model="@editedComment" OnValidSubmit="@((() => EditComment()))">
+                            <DataAnnotationsValidator/>
+                            <ValidationSummary/>
+                            <div class="form-group field">
+                                <span>
+                                    <label>Edit : </label>
+                                </span>
+                                <span>
+                                    <InputTextArea rows="2" @bind-Value="editedComment.Body"></InputTextArea>
+                                </span>
+                            </div>
+                            <p class="actions">
+                                <button class="acceptbtn" type="submit"> Update </button>
+                            </p>
+                        </EditForm>
+                    </Modal>
+                }
             </div>
         </div>
     </div>
@@ -99,6 +119,10 @@ else {
 
     [Parameter]
     public int PostId { get; set; }
+
+    private bool showModal;
+
+    private Comment editedComment;
 
     protected override async Task OnInitializedAsync() {
         postToOpen = await forumService.GetPostAsync(ForumId, SubForumId, PostId);
@@ -144,6 +168,22 @@ else {
     }
 
 
+    private async Task EditComment() {
+        // Comment comment = await forumService.EditComment(ForumId,SubForumId,PostId,editedComment);
+        // int index = -1;
+        // for (int i = 0; i < postToOpen.Comments.Count; i++) {
+        //     if (postToOpen.Comments.) {
+        //         
+        //     }
+        // }
 
+    }
+
+    private void EditPressed(Comment comment) {
+        editedComment.Id = comment.Id;
+        editedComment.Writer = comment.Writer;
+        editedComment.CreatedAt = comment.CreatedAt;
+        editedComment.ParentComment = comment.ParentComment;
+    }
 
 }
