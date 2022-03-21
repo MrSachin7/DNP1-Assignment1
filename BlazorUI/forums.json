@@ -6,144 +6,48 @@
           "Username": "sachin123",
           "Password": null
         },
-        "Title": ".NET Programming",
-        "Description": "This sub- forum will contain all the .Net programming stuffs",
-        "CreatedAt": "0001-01-01T00:00:00",
-        "Views": 2,
+        "Title": ".Net Programming",
+        "Description": "Here, we discuss anything related to .NET Programming ",
+        "CreatedAt": "2022-03-21T09:55:10.5784533+01:00",
+        "Views": 3,
         "Id": 1,
         "AllPosts": [
           {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
+            "Header": ":NET developers are getting rid of the null pointer exception",
+            "Body": "The recent release of .NET version 6.5 has shook the world into places. The developers decided to get rid of the null pointer exception . Thus, coders now have to specify which variables can be nullable by themselves.",
             "WrittenBy": {
               "Username": "sachin123",
               "Password": null
             },
-            "CreatedAt": "2022-03-19T02:06:37.8083352+01:00",
-            "Id": 1
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:06:41.0900961+01:00",
-            "Id": 2
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:13.3383538+01:00",
-            "Id": 3
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:14.182219+01:00",
-            "Id": 4
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:14.3743264+01:00",
-            "Id": 5
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:14.5432555+01:00",
-            "Id": 6
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:15.0644387+01:00",
-            "Id": 7
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:15.3755594+01:00",
-            "Id": 8
-          },
-          {
-            "Header": "Issue with .NET6",
-            "Body": "Helpppp !!!\nNull pointer exception happening",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:07:15.5604118+01:00",
-            "Id": 9
-          },
-          {
-            "Header": "Heklp",
-            "Body": "sfsfs",
-            "WrittenBy": {
-              "Username": "sachin123",
-              "Password": null
-            },
-            "CreatedAt": "2022-03-19T02:08:52.5342466+01:00",
-            "Id": 10
+            "CreatedAt": "2022-03-21T09:57:07.4448765+01:00",
+            "Id": 1,
+            "Comments": [
+              {
+                "Body": "Thats some delicious news",
+                "Writer": {
+                  "Username": "troels123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T10:01:09.3121695+01:00"
+              },
+              {
+                "Body": "can i see 2 comments now ??",
+                "Writer": {
+                  "Username": "troels123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T10:02:35.3937797+01:00"
+              }
+            ]
           }
         ]
-      },
-      {
-        "OwnedBy": {
-          "Username": "sachin123",
-          "Password": null
-        },
-        "Title": "Test",
-        "Description": "Just testing stuffs",
-        "CreatedAt": "2022-03-19T01:00:27.6631612+01:00",
-        "Views": 2,
-        "Id": 2,
-        "AllPosts": []
       }
     ],
     "ForumName": "Computer Science",
-    "ForumDescription": "A forum for computer science",
+    "ForumDescription": "A forum to discuss stuffs related to computer science.",
     "Id": 1,
-    "Views": 8
-  },
-  {
-    "AllSubForums": [],
-    "ForumName": "Football",
-    "ForumDescription": "One truth of football .\n Cristiano Ronaldo is the GOAT",
-    "Id": 2,
     "Views": 3
-  },
-  {
-    "AllSubForums": [],
-    "ForumName": "The sigma males",
-    "ForumDescription": "A forum for males who are grinding to become a sigma male",
-    "Id": 3,
-    "Views": 5
   }
 ]

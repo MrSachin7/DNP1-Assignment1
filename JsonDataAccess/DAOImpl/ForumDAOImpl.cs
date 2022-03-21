@@ -1,4 +1,5 @@
-﻿using Application;
+﻿using System.Reflection.Metadata.Ecma335;
+using Application;
 using Entities.Models;
 
 namespace JsonDataAccess;
@@ -58,6 +59,16 @@ public class ForumDAOImpl : IForumDAO {
         (await GetSubForumAsync(forumId, subForumId)).Views++;
         await fileContext.SaveChangesAsync();
 
+    }
+
+    public async Task<Post?> GetPostAsync(int forumId, int subForumId, int postId) {
+      return (await GetSubForumAsync(forumId, subForumId))?.AllPosts.First(post => post.Id == postId);
+    }
+
+    public async Task AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
+        fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.First(subForum => subForum.Id == subForumId)
+            .AllPosts.First(post=>post.Id ==postId).Comments.Add(commentToPost);
+        await fileContext.SaveChangesAsync();
     }
 
     public async Task AddForumAsync(Forum newForumItem) {

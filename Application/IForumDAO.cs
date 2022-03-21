@@ -11,4 +11,7 @@ public interface IForumDAO {
     Task IncrementViewOfForumAsync(int forumId);
     Task AddPostAsync(Post newPostItem, int forumId, int subForumId);
     Task IncrementViewOfSubForumAsync(int forumId, int subForumId);
+    Task<Post?> GetPostAsync(int forumId, int subForumId, int postId);
+
+    Task AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost);
 }

@@ -79,6 +79,7 @@
     }
 
     private async Task OpenPost(Post post) {
+        navMgr.NavigateTo($"/ViewPost/{ForumId}/{SubForumId}/{post.Id}");
     }
 
     private string DescriptionToDisplay(Post post) {

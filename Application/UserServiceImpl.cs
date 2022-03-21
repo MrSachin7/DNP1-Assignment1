@@ -7,14 +7,11 @@ using Entities.Models;
 namespace Application;
 
 public class UserServiceImpl : IUserService {
-  
-
-  
     private readonly IUserDAO userDao;
+
     public UserServiceImpl(IUserDAO userDao) {
         this.userDao = userDao;
     }
-
 
 
     public async Task CreateUserAsync(string username, string password) {
@@ -31,9 +28,8 @@ public class UserServiceImpl : IUserService {
     }
 
     public async Task<User> GetUserAsync(string username) {
-        User? find =await userDao.GetUserAsync(username);
+        User? find = await userDao.GetUserAsync(username);
         return find;
-
     }
 
 
@@ -65,7 +61,8 @@ public class UserServiceImpl : IUserService {
         if (string.IsNullOrEmpty(username)) {
             throw new Exception("Username cannot be empty");
         }
-        else if (username.Length <= 5) {
+
+        if (username.Length <= 5) {
             throw new Exception("Username must be greater than five characters");
         }
     }
