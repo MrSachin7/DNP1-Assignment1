@@ -12,7 +12,10 @@
 @*         </NotLoggedIn> *@
 @*     </NotAuthorized> *@
 @* *@
-@*     <Authorized> *@
+@*     <Authorized> *@           
+<div class="entirePage">
+
+
 @if (forumToOpen == null) {
     <p>
         <em> Loading....</em>
@@ -26,6 +29,7 @@ else {
         </p>
     }
     else {
+        
         foreach (SubForum subForum in forumToOpen.AllSubForums) {
             <div class="container d-flex justify-content-center mt-50 mb-50">
                 <div class="row">
@@ -68,6 +72,7 @@ else {
         }
     }
 }
+</div>
 
 
 @*     </Authorized> *@

@@ -14,7 +14,7 @@ public class JsonUserContext {
                 LoadData();
             }
 
-            return users;   //TODO ask troels what this ! does....
+            return users!;   //TODO ask troels what this ! does....
         }
     }
 

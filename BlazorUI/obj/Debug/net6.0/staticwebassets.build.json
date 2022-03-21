@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eZcbWSwrQIzoJlAyqbvxdHyzdy+BQlvL7lkafclwsM8=",
+  "Hash": "uc8rDkRxBnpQmWDjq0F2kzp0HbnrtxvO1xETRBDPDok=",
   "Source": "BlazorUI",
   "BasePath": "_content/BlazorUI",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\wwwroot\\img\\Login.png",
+      "SourceId": "BlazorUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\wwwroot\\",
+      "BasePath": "_content/BlazorUI",
+      "RelativePath": "img/Login.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Login.png"
+    },
+    {
+      "Identity": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\wwwroot\\img\\Logout.png",
+      "SourceId": "BlazorUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\wwwroot\\",
+      "BasePath": "_content/BlazorUI",
+      "RelativePath": "img/Logout.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Logout.png"
     }
   ]
 }

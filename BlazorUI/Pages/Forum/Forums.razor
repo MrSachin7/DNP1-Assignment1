@@ -12,12 +12,13 @@
     </p>
 }
 else {
-    <button class="btn-outline-primary" @onclick="() =>OpenCreateForum() "> Create forum</button>
+    <AuthorizeView>
+        <button class="btn-outline-primary" @onclick="() => OpenCreateForum()"> Create forum</button>
+    </AuthorizeView>
     if (!allForums.Any()) {
         <p>
             <em> No forums created yet...</em>
-        </p> 
-   
+        </p>
     }
     else {
         foreach (Forum forum in allForums) {
@@ -53,7 +54,7 @@ else {
                 </div>
             </div>
         }
-}
+    }
 }
 
 
@@ -74,3 +75,4 @@ else {
     }
 
 }
+

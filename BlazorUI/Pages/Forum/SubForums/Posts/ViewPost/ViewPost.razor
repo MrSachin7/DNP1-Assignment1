@@ -50,7 +50,8 @@
                                             <div class="d-flex flex-column ml-2">
                                                 <span class="name">@comment.Writer.Username</span> <small class="comment-text">@comment.Body</small>
                                                 <div class="d-flex flex-row align-items-center status">
-                                                    <small>Like</small> <small>Reply</small> <small>@(() => GetTimeToDisplay(comment))</small>
+                                                    @* <small>Like</small> <small>Reply</small> *@
+                                                    <small> @(GetTimeToDisplay(comment)) </small>
                                                 </div>
                                             </div>
                                         </div>

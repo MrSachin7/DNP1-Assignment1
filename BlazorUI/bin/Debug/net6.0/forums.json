@@ -9,7 +9,7 @@
         "Title": ".Net Programming",
         "Description": "Here, we discuss anything related to .NET Programming ",
         "CreatedAt": "2022-03-21T09:55:10.5784533+01:00",
-        "Views": 3,
+        "Views": 6,
         "Id": 1,
         "AllPosts": [
           {
@@ -39,15 +39,43 @@
                 },
                 "ParentComment": null,
                 "CreatedAt": "2022-03-21T10:02:35.3937797+01:00"
+              },
+              {
+                "Body": "nice",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T13:27:47.2106514+01:00"
               }
             ]
           }
         ]
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "JAVA",
+        "Description": "sdfdsfdsf",
+        "CreatedAt": "2022-03-21T13:15:49.3123303+01:00",
+        "Views": 0,
+        "Id": 2,
+        "AllPosts": []
       }
     ],
     "ForumName": "Computer Science",
     "ForumDescription": "A forum to discuss stuffs related to computer science.",
     "Id": 1,
-    "Views": 3
+    "Views": 6
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": "dsdfgsg",
+    "ForumDescription": "dfdgdfgfd",
+    "Id": 2,
+    "Views": 0
   }
 ]

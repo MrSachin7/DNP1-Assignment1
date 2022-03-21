@@ -137,7 +137,7 @@ hr[b-9l94p9wxqz] {
 }
 /* _content/BlazorUI/Pages/Forum/SubForums/SubForums.razor.rz.scp.css */
 .body[b-xggczduum5] {
-    margin: 0;
+    margin: 1000px;
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .8125rem;
     font-weight: 400;
@@ -196,6 +196,11 @@ a[b-xggczduum5] {
 
 .course-button:hover[b-xggczduum5] {
     color: #fff
+}
+/* _content/BlazorUI/Pages/UIElements/LoginButtons.razor.rz.scp.css */
+.icon[b-mwrmd3tkya]{
+    width: 30px;
+    cursor: pointer;
 }
 /* _content/BlazorUI/Pages/UIElements/Modal.razor.rz.scp.css */
 .modal-background[b-y6l1j2v8r0] {
