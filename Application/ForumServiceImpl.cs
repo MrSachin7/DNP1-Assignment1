@@ -52,8 +52,8 @@ public class ForumServiceImpl : IForumService {
 
     }
 
-    public async Task AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
-        await forumDAO.AddCommentToPost(forumId, subForumId, postId, commentToPost);
+    public async Task<Comment> AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
+       return await forumDAO.AddCommentToPost(forumId, subForumId, postId, commentToPost);
     }
 
     public void IncrementViewOfForumAsync() {

@@ -4,6 +4,8 @@
 @inject IForumService forumService;
 @inject NavigationManager navMgr;
 
+
+
 @if (allForums == null) {
     <p>
         <em>
@@ -13,8 +15,13 @@
 }
 else {
     <AuthorizeView>
-        <button class="btn-outline-primary" @onclick="() => OpenCreateForum()"> Create forum</button>
+        <Authorized>
+            <button class="btn-outline-primary" @onclick="() => OpenCreateForum()">
+                Create forum
+            </button>
+        </Authorized>
     </AuthorizeView>
+
     if (!allForums.Any()) {
         <p>
             <em> No forums created yet...</em>
@@ -58,6 +65,7 @@ else {
 }
 
 
+
 @code {
     private List<Forum>? allForums;
 
@@ -75,4 +83,3 @@ else {
     }
 
 }
-

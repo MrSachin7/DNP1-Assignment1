@@ -3,77 +3,92 @@
 @using Entities.Models
 @inject IForumService forumService;
 
-<AuthorizeView>
 
-    <Authorized>
-        @if (postToOpen == null) {
-            <p>
-                <em> Loading....</em>
-            </p>
-        }
-        else {
-            <div class="container mt-5 mb-5">
-                <div class="row d-flex align-items-center justify-content-center">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="d-flex justify-content-between p-2 px-3">
-                                <div class="d-flex flex-row align-items-center">
-                                    @* <img src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle"> *@
-                                    <span class="oi oi-person"></span> <br/>
-                                    <div class="d-flex flex-column ml-2">
-                                        <span class="font-weight-bold">@postToOpen.WrittenBy.Username</span> <small class="text-primary">user</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row mt-1 ellipsis">
-                                    <small class="mr-2">@postToOpen.CreatedAt.ToString()</small> <i class="fa fa-ellipsis-h"></i>
-                                </div>
+
+
+@if (postToOpen == null) {
+    <p>
+        <em> Loading....</em>
+    </p>
+}
+else {
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="d-flex justify-content-between p-2 px-3">
+                        <div class="d-flex flex-row align-items-center">
+                            @* <img src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle"> *@
+                            <span class="oi oi-person"></span> <br/>
+                            <div class="d-flex flex-column ml-2">
+                                <span class="font-weight-bold">@postToOpen.WrittenBy.Username</span> <small class="text-primary">user</small>
                             </div>
-                            @* <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid"> *@
-                            <div class="p-2">
-                                <p class="text-justify">@postToOpen.Body</p>
-                                <hr>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex flex-row icons d-flex align-items-center">
-                                        <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i>
-                                    </div>
-                                    <div class="d-flex flex-row muted-color">
-                                        <span>@postToOpen.Comments.Count comments</span> <span class="ml-2">Share</span>
+                        </div>
+                        <div class="d-flex flex-row mt-1 ellipsis">
+                            <small class="mr-2">@postToOpen.CreatedAt.ToString()</small> <i class="fa fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    @* <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid"> *@
+                    <div class="p-2">
+                        <p class="text-justify">@postToOpen.Body</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-row icons d-flex align-items-center">
+                                <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i>
+                            </div>
+                            <div class="d-flex flex-row muted-color">
+                                <span>@postToOpen.Comments.Count comments</span>
+                                @* <span class="ml-2">Share</span> *@
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="comments">
+                            @foreach (Comment comment in postToOpen.Comments) {
+                                <div class="d-flex flex-row mb-2">
+                                    <span class="oi oi-person"></span>
+                                    @* <img src="https://i.imgur.com/9AZ2QX1.jpg" width="40" class="rounded-image"> *@
+
+                                    <div class="d-flex flex-column ml-2">
+                                        <span class="name">@comment.Writer.Username</span> <small class="comment-text">@comment.Body</small>
+                                        <div class="d-flex flex-row align-items-center status">
+                                            @* @* <small>Like</small> *@
+                                            <AuthorizeView>
+                                                <Authorized>
+                                                    @if (context.User.Identity.Name.Equals(comment.Writer.Username)) {
+                                                        <small>Edit</small>
+                                                    }
+                                                </Authorized>
+
+                                            </AuthorizeView>
+
+                                            <small> @(GetTimeToDisplay(comment)) </small>
+                                        </div>
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="comments">
-                                    @foreach (Comment comment in postToOpen.Comments) {
-                                        <div class="d-flex flex-row mb-2">
-                                            <span class="oi oi-person"></span>
-                                            @* <img src="https://i.imgur.com/9AZ2QX1.jpg" width="40" class="rounded-image"> *@
-
-                                            <div class="d-flex flex-column ml-2">
-                                                <span class="name">@comment.Writer.Username</span> <small class="comment-text">@comment.Body</small>
-                                                <div class="d-flex flex-row align-items-center status">
-                                                    @* <small>Like</small> <small>Reply</small> *@
-                                                    <small> @(GetTimeToDisplay(comment)) </small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
+                            }
+                            <AuthorizeView>
+                                <Authorized>
                                     <div class="comment-input">
                                         <input type="text" class="form-control" @bind="commentToPost">
                                         <div class="fonts">
-                                            <span class="oi oi-eject" @onclick="@(() => PostComment(@context.User.Identity.Name))"></span>
+                                            <span class="oi oi-eject" @onclick="@(() => PostComment(context.User.Identity.Name))"></span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </Authorized>
+                            </AuthorizeView>
+
                         </div>
                     </div>
                 </div>
             </div>
-        }
-    </Authorized>
-</AuthorizeView>
+        </div>
+    </div>
+}
+
+
 
 @code {
-    private Post? postToOpen = new Post();
+    private Post? postToOpen;
     private string? commentToPost;
 
     [Parameter]
@@ -87,6 +102,7 @@
 
     protected override async Task OnInitializedAsync() {
         postToOpen = await forumService.GetPostAsync(ForumId, SubForumId, PostId);
+        Console.WriteLine("open page");
     // postToOpen.Body = "Boyzz and girls";
     // Comment tempComment = new Comment();
     // tempComment.Body = "Wonderful|||";
@@ -106,17 +122,24 @@
             comment.Writer = new User(username);
             comment.CreatedAt = DateTime.Now;
             comment.ParentComment = null;
-            await forumService.AddCommentToPost(ForumId, SubForumId, PostId, comment);
+            Comment commentFromDb = await forumService.AddCommentToPost(ForumId, SubForumId, PostId, comment);
+            postToOpen?.Comments.Add(commentFromDb);
         }
         commentToPost = string.Empty;
     }
 
     private string GetTimeToDisplay(Comment comment) {
+        if ((DateTime.Now - comment.CreatedAt).Minutes == 0) {
+            return $"{(DateTime.Now - comment.CreatedAt).Seconds} seconds ago";
+        }
+
+        if ((DateTime.Now - comment.CreatedAt).Hours == 0) {
+            return $"{(DateTime.Now - comment.CreatedAt).Minutes} minutes ago";
+        }
         if ((DateTime.Now - comment.CreatedAt).Days == 0) {
             int hours = (DateTime.Now - comment.CreatedAt).Hours;
             return $"{hours} hours ago";
         }
-
         return $"{(DateTime.Now - comment.CreatedAt).Days} days ago";
     }
 

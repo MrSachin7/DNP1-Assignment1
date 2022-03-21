@@ -20,7 +20,9 @@
         </div>
     }
     <div class="field">
-        <button class="createButton" @onclick="CreateUserAsync"> Sign Up</button>  
+        <button class="createButton" @onclick="CreateUserAsync"> Sign Up</button> 
+        <hr/>
+        <p> Already have an account ?</p>
         <button class="createButton" @onclick="LoginAsync"> LogIn</button>
     </div>
 
@@ -32,7 +34,7 @@
     private string errorlabel;
 
     private async Task CreateUserAsync() {
-        errorlabel = "";
+        errorlabel = string.Empty;
         try {
             await userService.CreateUserAsync(userName, password);
             navMgr.NavigateTo("/");

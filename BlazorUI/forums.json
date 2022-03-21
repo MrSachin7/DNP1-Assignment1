@@ -9,7 +9,7 @@
         "Title": ".Net Programming",
         "Description": "Here, we discuss anything related to .NET Programming ",
         "CreatedAt": "2022-03-21T09:55:10.5784533+01:00",
-        "Views": 6,
+        "Views": 16,
         "Id": 1,
         "AllPosts": [
           {
@@ -48,6 +48,135 @@
                 },
                 "ParentComment": null,
                 "CreatedAt": "2022-03-21T13:27:47.2106514+01:00"
+              },
+              {
+                "Body": "ah , okay ",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T14:22:06.3888593+01:00"
+              },
+              {
+                "Body": "hgyfty",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:30:33.8131291+01:00"
+              },
+              {
+                "Body": "sdfghj",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:32:30.5060167+01:00"
+              },
+              {
+                "Body": "wertyu",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:34:54.1062596+01:00"
+              },
+              {
+                "Body": "cvbn",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:39:28.2912982+01:00"
+              },
+              {
+                "Body": "poiuy",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:43:11.740036+01:00"
+              },
+              {
+                "Body": "cjhgctyufduytf",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:47:19.7354994+01:00"
+              },
+              {
+                "Body": "ihuihiuhbnuihuyigbuiyghb",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:47:45.4440749+01:00"
+              },
+              {
+                "Body": "2345",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:48:16.9689037+01:00"
+              },
+              {
+                "Body": "09876",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T15:48:31.9727828+01:00"
+              },
+              {
+                "Body": "sdgswgsdf",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T22:30:30.0722631+01:00"
+              },
+              {
+                "Body": "cdfbvgdvb",
+                "Writer": {
+                  "Username": "sachin123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T22:33:06.6843062+01:00"
+              }
+            ]
+          },
+          {
+            "Header": "Hello guys",
+            "Body": "i am here ....",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-21T14:22:29.9943074+01:00",
+            "Id": 2,
+            "Comments": [
+              {
+                "Body": "hello boy",
+                "Writer": {
+                  "Username": "troels123",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-21T14:23:01.5055842+01:00"
               }
             ]
           }
@@ -69,13 +198,13 @@
     "ForumName": "Computer Science",
     "ForumDescription": "A forum to discuss stuffs related to computer science.",
     "Id": 1,
-    "Views": 6
+    "Views": 25
   },
   {
     "AllSubForums": [],
     "ForumName": "dsdfgsg",
     "ForumDescription": "dfdgdfgfd",
     "Id": 2,
-    "Views": 0
+    "Views": 2
   }
 ]

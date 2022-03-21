@@ -4,7 +4,7 @@ using Entities.Models;
 
 namespace JsonDataAccess; 
 
-public class JsonForumContext {
+public class JsonForumContext : IDisposable{
     private string forumPath = "forums.json";
     private ICollection<Forum>? forums;
 
@@ -45,5 +45,9 @@ public class JsonForumContext {
     private void LoadData() {
         string forumAsJson = File.ReadAllText(forumPath);
         forums = JsonSerializer.Deserialize<List<Forum>>(forumAsJson);
+    }
+
+    public void Dispose() {
+        forums = null;
     }
 }

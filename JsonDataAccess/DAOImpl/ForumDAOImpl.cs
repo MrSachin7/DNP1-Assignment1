@@ -8,7 +8,7 @@ public class ForumDAOImpl : IForumDAO {
     private JsonForumContext fileContext;
 
     public ForumDAOImpl(JsonForumContext FileContext) {
-        this.fileContext = FileContext;
+        this.fileContext = FileContext; 
     }
 
     public async Task<List<Forum>> GetAllForumsAsync() {
@@ -29,7 +29,8 @@ public class ForumDAOImpl : IForumDAO {
         else {
             newSubForumItem.Id = 1;
         }
-        newSubForumItem.CreatedAt= DateTime.Now;
+
+        newSubForumItem.CreatedAt = DateTime.Now;
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.Add(newSubForumItem);
         await fileContext.SaveChangesAsync();
     }
@@ -58,17 +59,28 @@ public class ForumDAOImpl : IForumDAO {
     public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
         (await GetSubForumAsync(forumId, subForumId)).Views++;
         await fileContext.SaveChangesAsync();
-
     }
 
     public async Task<Post?> GetPostAsync(int forumId, int subForumId, int postId) {
-      return (await GetSubForumAsync(forumId, subForumId))?.AllPosts.First(post => post.Id == postId);
+        Post? first = (await GetSubForumAsync(forumId, subForumId))?.AllPosts.First(post => post.Id == postId);
+        fileContext.Dispose();
+        return first;
     }
 
-    public async Task AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
+    public async Task<Comment> AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
+        Post? post = await GetPostAsync(forumId, subForumId, postId);
+        if (post.Comments.Any()) {
+            int largestId = post.Comments.Max(comment => comment.Id);
+            commentToPost.Id = largestId + 1;
+        }
+        else {
+            commentToPost.Id = 1;
+        }
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.First(subForum => subForum.Id == subForumId)
-            .AllPosts.First(post=>post.Id ==postId).Comments.Add(commentToPost);
+            .AllPosts.First(post => post.Id == postId).Comments.Add(commentToPost);
         await fileContext.SaveChangesAsync();
+        return commentToPost;
+
     }
 
     public async Task AddForumAsync(Forum newForumItem) {

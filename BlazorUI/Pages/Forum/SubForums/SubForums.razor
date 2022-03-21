@@ -12,66 +12,67 @@
 @*         </NotLoggedIn> *@
 @*     </NotAuthorized> *@
 @* *@
-@*     <Authorized> *@           
+@*     <Authorized> *@
 <div class="entirePage">
-
-
-@if (forumToOpen == null) {
-    <p>
-        <em> Loading....</em>
-    </p>
-}
-else {
-    <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
-    if (!forumToOpen.AllSubForums.Any()) {
+    @if (forumToOpen == null) {
         <p>
-            <em> This forum doesnot contain any sub-forums yet</em>
+            <em> Loading....</em>
         </p>
     }
     else {
-        
-        foreach (SubForum subForum in forumToOpen.AllSubForums) {
-            <div class="container d-flex justify-content-center mt-50 mb-50">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card blog-horizontal">
-                            <div class="card-body">
-                                <div >
-                                    <h5>
-                                        <label class="card-title "> @subForum.Title</label>
-                                    </h5>
-                                    <ul class="list-inline list-inline-dotted text-muted mb-0">
-                                        <li class="list-inline-item">By <a href="#" class="text-muted" data-abc="true">@subForum.OwnedBy.Username</a></li>
-                                        <li class="list-inline-item"> @subForum.CreatedAt.ToShortDateString()</li>
-                                    </ul>
+        <AuthorizeView>
+            <Authorized>
+                      <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
+            </Authorized>
+        </AuthorizeView>
+        if (!forumToOpen.AllSubForums.Any()) {
+            <p>
+                <em> This forum doesnot contain any sub-forums yet</em>
+            </p>
+        }
+        else {
+            foreach (SubForum subForum in forumToOpen.AllSubForums) {
+                <div class="container d-flex justify-content-center mt-50 mb-50">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card blog-horizontal">
+                                <div class="card-body">
+                                    <div >
+                                        <h5>
+                                            <label class="card-title "> @subForum.Title</label>
+                                        </h5>
+                                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                            <li class="list-inline-item">By <a href="#" class="text-muted" data-abc="true">@subForum.OwnedBy.Username</a></li>
+                                            <li class="list-inline-item"> @subForum.CreatedAt.ToShortDateString()</li>
+                                        </ul>
+                                    </div>
+                                    <label>@GetDescToDisplay(subForum)</label>
+                                    @* <a href="#" data-abc="true">[...]</a> *@
                                 </div>
-                                <label>@GetDescToDisplay(subForum)</label>
-                                @* <a href="#" data-abc="true">[...]</a> *@
-                            </div>
-                            <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
-                                <ul class="list-inline list-inline-dotted mb-0">
-                                    <li class="list-inline-item">
-                                        <span class="oi oi-eye"></span> @subForum.Views
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <span class="oi oi-star" style="color: yellowgreen"></span>
-                                        <span class="oi oi-star"></span>
-                                        <span class="oi oi-star"></span>
-                                        <span class="oi oi-star"></span>
-                                        <span class="text-muted ml-1">(12)</span>
-                                    </li>
-                                </ul>
-                                <div class="mt-2 mt-sm-0">
-                                    <label @onclick="@(() => OpenPosts(subForum.Id))"> Open </label>
+                                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
+                                    <ul class="list-inline list-inline-dotted mb-0">
+                                        <li class="list-inline-item">
+                                            <span class="oi oi-eye"></span> @subForum.Views
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <span class="oi oi-star" style="color: yellowgreen"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="text-muted ml-1">(12)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-2 mt-sm-0">
+                                        <label @onclick="@(() => OpenPosts(subForum.Id))"> Open </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         }
     }
-}
 </div>
 
 
@@ -109,11 +110,10 @@ else {
 
     private void OpenCreateSubForum() {
         navMgr.NavigateTo($"/CreateSubForum/{Id}");
-      
     }
 
     private void OpenPosts(int id) {
-       navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
+        navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
         forumService.IncrementViewOfSubForumAsync(this.Id, id);
     }
 

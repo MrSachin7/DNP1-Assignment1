@@ -5,4 +5,6 @@ public class Comment {
     public User Writer { get; set; }
     public Comment? ParentComment { get; set; }
     public DateTime CreatedAt { get; set; }
+
+    public int Id { get; set; }
 }
