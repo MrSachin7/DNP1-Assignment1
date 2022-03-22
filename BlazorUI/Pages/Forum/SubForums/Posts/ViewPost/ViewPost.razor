@@ -1,6 +1,7 @@
 ﻿@page "/ViewPost/{ForumId:int}/{SubForumId:int}/{PostId:int}"
 @using Contracts
 @using Entities.Models
+@using System.IO.Pipes
 @inject IForumService forumService; 
 @inject NavigationManager navMgr
 
@@ -52,11 +53,12 @@ else {
                                     <div class="d-flex flex-column ml-2">
                                         <span class="name">@comment.Writer.Username</span> <small class="comment-text">@comment.Body</small>
                                         <div class="d-flex flex-row align-items-center status">
-                                            @* @* <small>Like</small> *@
+
                                             <AuthorizeView>
                                                 <Authorized>
                                                     @if (context.User.Identity.Name.Equals(comment.Writer.Username)) {
                                                         <small @onclick="@((() => EditPressed(comment)))">Edit</small>
+                                                        <small @onclick="@((() => DeletePressed(comment)))"> Delete</small>
                                                     }
                                                 </Authorized>
 
@@ -82,23 +84,28 @@ else {
                     </div>
                 </div>
                 @if (showModal) {
-                    <Modal>
-                        <EditForm Context="formCtx" Model="@editedComment" OnValidSubmit="@((() => EditComment()))">
-                            <DataAnnotationsValidator/>
-                            <ValidationSummary/>
-                            <div class="form-group field">
-                                <span>
-                                    <label>Edit : </label>
-                                </span>
-                                <span>
-                                    <InputTextArea rows="2" @bind-Value="editedComment.Body"></InputTextArea>
-                                </span>
-                            </div>
-                            <p class="actions">
-                                <button class="acceptbtn" type="submit"> Update </button>
-                            </p>
-                        </EditForm>
-                    </Modal>
+                    <div class="box">
+                        <Modal>
+                            <EditForm Context="formCtx" Model="@editedComment" OnValidSubmit="@((() => EditComment()))">
+                                <DataAnnotationsValidator/>
+                                <ValidationSummary/>
+                                <div class="form-group field">
+                                    <span>
+                                        <label>Edit : </label>
+                                    </span>
+                                    <span>
+                                        <InputTextArea rows="2" @bind-Value="editedComment.Body"></InputTextArea>
+                                    </span>
+                                </div>
+                                <p>
+                                    <button class="acceptbtn" type="submit"> Update </button>
+                                </p>
+                                <p>
+                                    <button class="acceptbtn" onclick="@(() => Cancel())"> Cancel </button>
+                                </p>
+                            </EditForm>
+                        </Modal>
+                    </div>
                 }
             </div>
         </div>
@@ -122,7 +129,7 @@ else {
 
     private bool showModal;
 
-    private Comment editedComment;
+    private Comment editedComment = new Comment();
 
     protected override async Task OnInitializedAsync() {
         postToOpen = await forumService.GetPostAsync(ForumId, SubForumId, PostId);
@@ -169,14 +176,15 @@ else {
 
 
     private async Task EditComment() {
-        // Comment comment = await forumService.EditComment(ForumId,SubForumId,PostId,editedComment);
-        // int index = -1;
-        // for (int i = 0; i < postToOpen.Comments.Count; i++) {
-        //     if (postToOpen.Comments.) {
-        //         
-        //     }
-        // }
-
+        if (string.IsNullOrEmpty(editedComment.Body)) {
+            return;
+        }
+        Comment comment = await forumService.EditComment(ForumId, SubForumId, PostId, editedComment);
+        Comment localComment = postToOpen.Comments.First(comment1 => comment1.Id == editedComment.Id);
+        postToOpen.Comments.Remove(localComment);
+        postToOpen.Comments.Add(comment);
+        showModal = false;
+        editedComment = new Comment();
     }
 
     private void EditPressed(Comment comment) {
@@ -184,6 +192,17 @@ else {
         editedComment.Writer = comment.Writer;
         editedComment.CreatedAt = comment.CreatedAt;
         editedComment.ParentComment = comment.ParentComment;
+        editedComment.Body = comment.Body;
+        showModal = true;
+    }
+
+    private void Cancel() {
+        showModal = false;
+    }
+
+    private async Task DeletePressed(Comment comment) {
+        Comment commentFromDb = await forumService.DeleteComment(ForumId, SubForumId, PostId, comment);
+        postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id==commentFromDb.Id)));
     }
 
 }

@@ -15,4 +15,6 @@ public interface IForumService {
     Task<Post?> GetPostAsync(int forumId, int subForumId, int postId);
     Task<Comment> AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost);
 
+    Task<Comment> EditComment(int forumId, int subForumId, int postId, Comment editedComment);
+    Task<Comment> DeleteComment(int forumId, int subForumId, int postId, Comment comment);
 }

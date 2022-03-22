@@ -66,6 +66,27 @@
     text-decoration: underline;
     color:blue;
 }
+/* _content/BlazorUI/Pages/Forum/SubForums/Posts/CreatePost.razor.rz.scp.css */
+.box[b-lk92yk1ep3]{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: 50px auto auto;
+}
+
+.field[b-lk92yk1ep3]{
+    margin-top: 20px;
+}
+.acceptbtn[b-lk92yk1ep3]{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.acceptbtn:hover[b-lk92yk1ep3]{
+    background-color: #00d900;
+}
 /* _content/BlazorUI/Pages/Forum/SubForums/Posts/ViewPost/ViewPost.razor.rz.scp.css */
 /*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");*/
 
@@ -155,6 +176,25 @@ hr[b-9l94p9wxqz] {
     border-color: #8bbafe;
     outline: 0;
     box-shadow: none
+}
+.box[b-9l94p9wxqz]{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: 50px auto auto;
+}
+.field[b-9l94p9wxqz]{
+    margin-top: 20px;
+}
+.acceptbtn[b-9l94p9wxqz]{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.acceptbtn:hover[b-9l94p9wxqz]{
+    background-color: #00d900;
 }
 /* _content/BlazorUI/Pages/Forum/SubForums/SubForums.razor.rz.scp.css */
 .entirePage[b-xggczduum5] {

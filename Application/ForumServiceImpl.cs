@@ -56,6 +56,15 @@ public class ForumServiceImpl : IForumService {
        return await forumDAO.AddCommentToPost(forumId, subForumId, postId, commentToPost);
     }
 
+    public async Task<Comment> EditComment(int forumId, int subForumId, int postId, Comment editedComment) {
+        return await forumDAO.EditComment(forumId, subForumId, postId, editedComment);
+        
+    }
+
+    public async Task<Comment> DeleteComment(int forumId, int subForumId, int postId, Comment comment) {
+        return await forumDAO.DeleteComment(forumId, subForumId, postId, comment);
+    }
+
     public void IncrementViewOfForumAsync() {
         throw new NotImplementedException();
     }

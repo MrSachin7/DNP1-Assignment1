@@ -8,7 +8,7 @@ public class ForumDAOImpl : IForumDAO {
     private JsonForumContext fileContext;
 
     public ForumDAOImpl(JsonForumContext FileContext) {
-        this.fileContext = FileContext; 
+        this.fileContext = FileContext;
     }
 
     public async Task<List<Forum>> GetAllForumsAsync() {
@@ -76,10 +76,37 @@ public class ForumDAOImpl : IForumDAO {
         else {
             commentToPost.Id = 1;
         }
+
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.First(subForum => subForum.Id == subForumId)
             .AllPosts.First(post => post.Id == postId).Comments.Add(commentToPost);
         await fileContext.SaveChangesAsync();
         return commentToPost;
+    }
+
+    public async Task<Comment> EditComment(int forumId, int subForumId, int postId, Comment editedComment) {
+        Post? post = await GetPostAsync(forumId, subForumId, postId);
+        Comment commentFromDb = fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums
+            .First(subForum => subForum.Id == subForumId)
+            .AllPosts.First(post => post.Id == postId).Comments.First(comment => comment.Id == editedComment.Id);
+
+        commentFromDb.Body = editedComment.Body;
+        commentFromDb.Id = editedComment.Id;
+        commentFromDb.Writer = editedComment.Writer;
+        commentFromDb.CreatedAt = editedComment.CreatedAt;
+        commentFromDb.ParentComment = editedComment.ParentComment;
+        await fileContext.SaveChangesAsync();
+        return commentFromDb;
+    }
+
+    public async Task<Comment> DeleteComment(int forumId, int subForumId, int postId, Comment comment) {
+        Comment commentFromDb = fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums
+            .First(subForum => subForum.Id == subForumId).AllPosts.First(post => post.Id == postId).Comments
+            .First(comment1 => comment1.Id == comment.Id);
+        fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums
+            .First(subForum => subForum.Id == subForumId).AllPosts.First(post => post.Id == postId).Comments
+            .Remove(commentFromDb);
+       await fileContext.SaveChangesAsync();
+       return commentFromDb;
 
     }
 
