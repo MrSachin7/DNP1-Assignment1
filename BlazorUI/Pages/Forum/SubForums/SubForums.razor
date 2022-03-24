@@ -22,7 +22,7 @@
     else {
         <AuthorizeView>
             <Authorized>
-                      <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
+                <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
             </Authorized>
         </AuthorizeView>
         if (!forumToOpen.AllSubForums.Any()) {
@@ -31,11 +31,11 @@
             </p>
         }
         else {
-            foreach (SubForum subForum in forumToOpen.AllSubForums) {
-                <div class="container d-flex justify-content-center mt-50 mb-50">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card blog-horizontal">
+            <div class="container d-flex justify-content-center mt-50 mb-50">
+                <div class="row">
+                    @foreach (SubForum subForum in forumToOpen.AllSubForums) {
+                        <div class="col-md-8 col-sm-8 col-lg-6">
+                            <div class="card blog-horizontal" @onclick="@(() => OpenPosts(subForum.Id))">
                                 <div class="card-body">
                                     <div >
                                         <h5>
@@ -63,14 +63,14 @@
                                         </li>
                                     </ul>
                                     <div class="mt-2 mt-sm-0">
-                                        <label @onclick="@(() => OpenPosts(subForum.Id))"> Open </label>
+                                        <label> @subForum.AllPosts.Count posts </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 </div>
-            }
+            </div>
         }
     }
 </div>
@@ -116,5 +116,7 @@
         navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
         forumService.IncrementViewOfSubForumAsync(this.Id, id);
     }
+
+}
 
 }

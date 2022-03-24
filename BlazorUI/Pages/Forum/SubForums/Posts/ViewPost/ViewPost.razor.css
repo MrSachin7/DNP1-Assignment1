@@ -106,3 +106,8 @@ hr {
 .acceptbtn:hover{
     background-color: #00d900;
 }
+.body  {
+    border:slategray solid;
+    border-radius: 8%;
+    box-shadow: 5px 10px #2196F3;
+}

@@ -18,20 +18,22 @@
 }
 
 .card[b-xggczduum5] {
-    min-width: 300px;
-    max-width: 300px;
-
     position: relative;
     display: -ms-flexbox;
+    margin-bottom: 25px;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .1875rem;
+    border:slategray solid;
+    border-radius: 8%;
     box-shadow: 5px 10px #2196F3;
+    height: 250px;
+}
+.card:hover[b-xggczduum5]{
+    background-color: #dee3e0;
 }
 
 @media (min-width: 576px) {

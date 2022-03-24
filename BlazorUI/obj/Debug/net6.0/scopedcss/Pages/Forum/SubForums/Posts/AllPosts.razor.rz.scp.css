@@ -23,3 +23,12 @@
     text-decoration: underline;
     color:blue;
 }
+
+.body[b-aby8fb0kek]  {
+    border:slategray solid;
+    border-radius: 8%;
+    box-shadow: 5px 10px #2196F3;
+}
+.body:hover[b-aby8fb0kek]{
+    background-color: #dee3e0;
+}

@@ -24,23 +24,26 @@ else {
     }
     else {
         @foreach (Post post in SubForumToOpen.AllPosts) {
-            <div class="row">
-                <div class="col-6">
-                    <div class="forum-container">
-                        <label class="username">
-                            @post.WrittenBy.Username
-                        </label>
-                        <br/>
-                        <label class="post-header" @onclick="@(() => OpenPost(post))">
-                            @post.Header
-                        </label>
-                        <br/>
-                        <label class="post-description" @onclick="@(() => OpenPost(post))">
-                            @DescriptionToDisplay(post)
-                        </label>
+           <div class="container">
+    <div class="row g-3 mt-5 mb-5">
+        <div class="col-md-9"  @onclick="@(() =>OpenPost(post))">
+            <div class="card body">
+                <div class="card-body"> <span class="text-danger fw-bold fs-6">By @post.WrittenBy.Username</span> 
+                     <h4 class="card-title text-dark mt-2">@post.Header</h4>
+                    <p class="card-text">@DescriptionToDisplay(post) .....<small> Read more ....</small></p>
+                    <div class="mt-4 about d-flex justify-content-between align-items-center">
+                        <span>
+                            <small> @GetTimeToDisplay(post) </small>
+                        </span>
+                        <span>
+                            <small>@post.Comments.Count comments  </small>
+                        </span>    
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
         }
     }
 }
@@ -81,6 +84,20 @@ else {
 
     private void OpenCreatePost() {
         navMgr.NavigateTo($"/Create-Post/{ForumId}/{SubForumId}");
+    }
+    private string GetTimeToDisplay(Post post) {
+        if ((DateTime.Now - post.CreatedAt).Minutes == 0) {
+            return $"{(DateTime.Now - post.CreatedAt).Seconds} seconds ago";
+        }
+
+        if ((DateTime.Now - post.CreatedAt).Hours == 0) {
+            return $"{(DateTime.Now - post.CreatedAt).Minutes} minutes ago";
+        }
+        if ((DateTime.Now - post.CreatedAt).Days == 0) {
+            int hours = (DateTime.Now - post.CreatedAt).Hours;
+            return $"{hours} hours ago";
+        }
+        return $"{(DateTime.Now - post.CreatedAt).Days} days ago";
     }
 
 }

@@ -106,3 +106,8 @@ hr[b-9l94p9wxqz] {
 .acceptbtn:hover[b-9l94p9wxqz]{
     background-color: #00d900;
 }
+.body[b-9l94p9wxqz]  {
+    border:slategray solid;
+    border-radius: 8%;
+    box-shadow: 5px 10px #2196F3;
+}

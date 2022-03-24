@@ -19,10 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Forum/Forums.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW1cRm9ydW1zLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +30,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Forum/CreateForum.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW1cQ3JlYXRlRm9ydW0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-77eie43cx2
+
+[D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Forum/Forums.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW1cRm9ydW1zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1pmr40vdlc
 
 [D:/SEM 3/SEM3/DNP1/DNP1-Assignment-1/DNPFirstAssignment/BlazorUI/Pages/Forum/SubForums/CreateSubForums.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW1cU3ViRm9ydW1zXENyZWF0ZVN1YkZvcnVtcy5yYXpvcg==
