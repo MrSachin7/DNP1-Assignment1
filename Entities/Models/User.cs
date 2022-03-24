@@ -8,4 +8,12 @@ public class User {
         this.Username = Username;
         this.Password = Password;
     }
+
+    public User(string Username) {
+        this.Username = Username;
+    }
+
+    public User() {
+
+    }
 }

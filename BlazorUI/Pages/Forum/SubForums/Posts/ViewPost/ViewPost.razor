@@ -1,0 +1,207 @@
+﻿@page "/ViewPost/{ForumId:int}/{SubForumId:int}/{PostId:int}"
+@using Contracts
+@using Entities.Models
+@using System.IO.Pipes
+@inject IForumService forumService; 
+@inject NavigationManager navMgr
+
+
+
+
+@if (postToOpen == null) {
+    <p>
+        <em> Loading....</em>
+    </p>
+}
+else {
+    <div class="container mt-5 mb-5">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-9">
+                <div class="card body">
+                    <div class="d-flex justify-content-between p-2 px-3">
+                        <div class="d-flex flex-row align-items-center">
+                            @* <img src="https://i.imgur.com/UXdKE3o.jpg" width="50" class="rounded-circle"> *@
+                            <span class="oi oi-person"></span> <br/>
+                            <div class="d-flex flex-column ml-2">
+                                <span class="font-weight-bold name">@postToOpen.WrittenBy.Username</span> <small class="text-primary">user</small>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row mt-1 ellipsis">
+                            <small class="mr-2">@postToOpen.CreatedAt.ToString()</small> <i class="fa fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                    @* <img src="https://i.imgur.com/xhzhaGA.jpg" class="img-fluid"> *@
+                    <div class="p-2">
+                        <p class="text-justify">@postToOpen.Body</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex flex-row icons d-flex align-items-center">
+                                <i class="fa fa-heart"></i> <i class="fa fa-smile-o ml-2"></i>
+                            </div>
+                            <div class="d-flex flex-row muted-color">
+                                <span>@postToOpen.Comments.Count comments</span>
+                                @* <span class="ml-2">Share</span> *@
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="comments">
+                            @foreach (Comment comment in postToOpen.Comments) {
+                                <div class="d-flex flex-row mb-2">
+                                    <span class="oi oi-person"></span>
+                                    @* <img src="https://i.imgur.com/9AZ2QX1.jpg" width="40" class="rounded-image"> *@
+
+                                    <div class="d-flex flex-column ml-2">
+                                        <span class="name">@comment.Writer.Username</span> <small class="comment-text">@comment.Body</small>
+                                        <div class="d-flex flex-row align-items-center status">
+
+                                            <AuthorizeView>
+                                                <Authorized>
+                                                    @if (context.User.Identity.Name.Equals(comment.Writer.Username)) {
+                                                        <small @onclick="@((() => EditPressed(comment)))">Edit</small>
+                                                        <small @onclick="@((() => DeletePressed(comment)))"> Delete</small>
+                                                    }
+                                                </Authorized>
+
+                                            </AuthorizeView>
+
+                                            <small> @(GetTimeToDisplay(comment)) </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <AuthorizeView>
+                                <Authorized>
+                                    <div class="comment-input">
+                                        <input type="text" class="form-control" @bind="commentToPost">
+                                        <div class="fonts">
+                                            <span class="oi oi-eject" @onclick="@(() => PostComment(context.User.Identity.Name))"></span>
+                                        </div>
+                                    </div>
+                                </Authorized>
+                            </AuthorizeView>
+
+                        </div>
+                    </div>
+                </div>
+                @if (showModal) {
+                    <div class="box">
+                        <Modal>
+                            <EditForm Context="formCtx" Model="@editedComment" OnValidSubmit="@((() => EditComment()))">
+                                <DataAnnotationsValidator/>
+                                <ValidationSummary/>
+                                <div class="form-group field">
+                                    <span>
+                                        <label>Edit : </label>
+                                    </span>
+                                    <span>
+                                        <InputTextArea rows="2" @bind-Value="editedComment.Body"></InputTextArea>
+                                    </span>
+                                </div>
+                                <p>
+                                    <button class="acceptbtn" type="submit"> Update </button>
+                                </p>
+                                <p>
+                                    <button class="acceptbtn" onclick="@(() => Cancel())"> Cancel </button>
+                                </p>
+                            </EditForm>
+                        </Modal>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    private Post? postToOpen;
+    private string? commentToPost;
+
+    [Parameter]
+    public int ForumId { get; set; }
+
+    [Parameter]
+    public int SubForumId { get; set; }
+
+    [Parameter]
+    public int PostId { get; set; }
+
+    private bool showModal;
+
+    private Comment editedComment = new Comment();
+
+    protected override async Task OnInitializedAsync() {
+        postToOpen = await forumService.GetPostAsync(ForumId, SubForumId, PostId);
+    // postToOpen.Body = "Boyzz and girls";
+    // Comment tempComment = new Comment();
+    // tempComment.Body = "Wonderful|||";
+    // tempComment.Writer = new User("Suhani");
+    // tempComment.CreatedAt=DateTime.Now;
+    // postToOpen.Comments.Add(tempComment);
+    // postToOpen.WrittenBy = new User("Troels123");
+    // postToOpen.Header = "I got my driving liscence";
+    // postToOpen.CreatedAt=DateTime.Now;
+    // postToOpen.Id = 1;
+    }
+
+    private async Task PostComment(string username) {
+        if (!string.IsNullOrEmpty(commentToPost)) {
+            Comment comment = new Comment();
+            comment.Body = commentToPost;
+            comment.Writer = new User(username);
+            comment.CreatedAt = DateTime.Now;
+            comment.ParentComment = null;
+            Comment commentFromDb = await forumService.AddCommentToPost(ForumId, SubForumId, PostId, comment);
+            postToOpen?.Comments.Add(commentFromDb);
+        }
+        commentToPost = string.Empty;
+    }
+
+    private string GetTimeToDisplay(Comment comment) {
+        if ((DateTime.Now - comment.CreatedAt).Minutes == 0) {
+            return $"{(DateTime.Now - comment.CreatedAt).Seconds} seconds ago";
+        }
+
+        if ((DateTime.Now - comment.CreatedAt).Hours == 0) {
+            return $"{(DateTime.Now - comment.CreatedAt).Minutes} minutes ago";
+        }
+        if ((DateTime.Now - comment.CreatedAt).Days == 0) {
+            int hours = (DateTime.Now - comment.CreatedAt).Hours;
+            return $"{hours} hours ago";
+        }
+        return $"{(DateTime.Now - comment.CreatedAt).Days} days ago";
+    }
+
+
+    private async Task EditComment() {
+        if (string.IsNullOrEmpty(editedComment.Body)) {
+            return;
+        }
+        Comment comment = await forumService.EditComment(ForumId, SubForumId, PostId, editedComment);
+        Comment localComment = postToOpen.Comments.First(comment1 => comment1.Id == editedComment.Id);
+        postToOpen.Comments.Remove(localComment);
+        postToOpen.Comments.Add(comment);
+        showModal = false;
+        editedComment = new Comment();
+    }
+
+    private void EditPressed(Comment comment) {
+        editedComment.Id = comment.Id;
+        editedComment.Writer = comment.Writer;
+        editedComment.CreatedAt = comment.CreatedAt;
+        editedComment.ParentComment = comment.ParentComment;
+        editedComment.Body = comment.Body;
+        showModal = true;
+    }
+
+    private void Cancel() {
+        showModal = false;
+    }
+
+    private async Task DeletePressed(Comment comment) {
+        Comment commentFromDb = await forumService.DeleteComment(ForumId, SubForumId, PostId, comment);
+        postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id==commentFromDb.Id)));
+    }
+
+}

@@ -6,7 +6,7 @@ namespace JsonDataAccess;
 
 public class JsonUserContext {
     private string userPath = "users.json";
-    private ICollection<User> users;
+    private ICollection<User>? users;
 
     public ICollection<User> Users {
         get {
@@ -14,7 +14,7 @@ public class JsonUserContext {
                 LoadData();
             }
 
-            return users;   //TODO ask troels what this ! does....
+            return users!; 
         }
     }
 

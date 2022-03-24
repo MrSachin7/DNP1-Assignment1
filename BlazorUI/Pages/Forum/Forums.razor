@@ -1,0 +1,66 @@
+﻿@page "/Forums"   
+@using Entities.Models
+@using Contracts
+@inject IForumService forumService;
+@inject NavigationManager navMgr;
+
+
+
+@if (allForums == null) {
+    <p>
+        <em>
+            Loading...
+        </em>
+    </p>
+}
+else {
+    <AuthorizeView>
+        <Authorized>
+            <button class="btn-outline-primary" @onclick="() => OpenCreateForum()">
+                Create forum
+            </button>
+        </Authorized>
+    </AuthorizeView>
+
+    if (!allForums.Any()) {
+        <p>
+            <em> No forums created yet...</em>
+        </p>
+    }
+    else {
+        <h4 >Welcome to the forum</h4>
+        <div class="container mt-100">
+            <div class="row">
+                @foreach (Forum forum in allForums) {
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card mb-30 body">
+                            <div class="card-body text-center">
+                                    <h4 class="card-title">@forum.ForumName</h4>
+                                    <p class="text-muted">@forum.ForumDescription</p>
+                                    <a class="btn btn-outline-primary btn-sm" @onclick="@(() => OpenForum(forum.Id))" data-abc="true">Open forum</a>
+                                <hr/>
+                                <span class="oi oi-eye"></span> @forum.Views
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+@code {
+    private List<Forum>? allForums;
+
+    protected override async void OnInitialized() {
+        allForums = await forumService.GetAllForumsAsync();
+    }
+
+    private void OpenForum(int id) {
+        navMgr.NavigateTo($"SubForums/{id}");
+        forumService.IncrementViewOfForumAsync(id);
+    }
+
+    private void OpenCreateForum() {
+        navMgr.NavigateTo("/Create-Forum");
+    }
+
+}}

@@ -25,8 +25,6 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.RazorAssemblyInfo.cs
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\staticwebassets.build.json
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\staticwebassets.development.json
-D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\CreateUser.razor.rz.scp.css
-D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\bundle\BlazorUI.styles.css
@@ -36,3 +34,17 @@ D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\ref\BlazorUI.dll
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.pdb
 D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\BlazorUI.genruntimeconfig.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\CreateForum.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\Modal.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\CreateUser.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\User\Login.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\NotLoggedIn.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\SubForums.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\Posts\AllPosts.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\Posts\ViewPost\ViewPost.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\users.json
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\UIElements\LoginButtons.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\CreateSubForums.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\SubForums\Posts\CreatePost.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\obj\Debug\net6.0\scopedcss\Pages\Forum\Forums.razor.rz.scp.css
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\BlazorUI\bin\Debug\net6.0\forums.json

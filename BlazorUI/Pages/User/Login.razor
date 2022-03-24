@@ -1,0 +1,62 @@
+﻿@page "/Login" 
+@using Contracts
+@inject IAuthService authService;
+@inject NavigationManager navMgr; 
+ 
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="card">
+            <h3> Login</h3>
+            <div class="field">
+                <label> Username :</label>
+                <input type="text" @bind="username"/>
+            </div>
+            <div class="field">
+                <label> Password :</label>
+                <input type="password" @bind="password"/>
+            </div>
+            @if (!string.IsNullOrEmpty(errorlabel)) {
+                <div class="field">
+                    <label style="color: red"></label>
+                    @errorlabel
+                </div>
+            }
+            <div class="field">
+                <button class="loginbtn" @onclick="LoginAsync"> Login</button>
+                <hr/> 
+                <p> Don't have an account ??</p>
+                <button class="loginbtn" @onclick="CreateAccountAsync"> Sign Up</button>
+            </div>
+        </div>  
+    </NotAuthorized>
+    <Authorized>
+        <div class="card">
+            <h3> Hello , @context.User.Identity.Name</h3>
+        </div>
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    private string username;
+    private string password;
+    private string errorlabel;
+
+
+    private async Task LoginAsync() {
+        errorlabel = "";
+        try {
+            await authService.LoginAsync(username, password);
+    //   navMgr.NavigateTo("/");
+            errorlabel = $"Hello {username}, logged in..";
+    //
+        }
+        catch (Exception e) {
+            errorlabel = $"Error : {e.Message}";
+        }
+    }
+
+    private async Task CreateAccountAsync() {
+        navMgr.NavigateTo("/Create-User");
+    }
+
+}
