@@ -1,0 +1,122 @@
+﻿@page "/SubForums/{Id:int}"
+@using Entities.Models
+@using Contracts
+@inject IForumService forumService
+@inject NavigationManager navMgr
+
+
+@* <AuthorizeView> *@
+@*     <NotAuthorized> *@
+@*         <NotLoggedIn> *@
+@*             <p> You must be logged in to view sub-forums</p> *@
+@*         </NotLoggedIn> *@
+@*     </NotAuthorized> *@
+@* *@
+@*     <Authorized> *@
+<div class="entirePage">
+    @if (forumToOpen == null) {
+        <p>
+            <em> Loading....</em>
+        </p>
+    }
+    else {
+        <AuthorizeView>
+            <Authorized>
+                <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
+            </Authorized>
+        </AuthorizeView>
+        if (!forumToOpen.AllSubForums.Any()) {
+            <p>
+                <em> This forum doesnot contain any sub-forums yet</em>
+            </p>
+        }
+        else {
+            <div class="container d-flex justify-content-center mt-50 mb-50">
+                <div class="row">
+                    @foreach (SubForum subForum in forumToOpen.AllSubForums) {
+                        <div class="col-md-8 col-sm-8 col-lg-6">
+                            <div class="card blog-horizontal" @onclick="@(() => OpenPosts(subForum.Id))">
+                                <div class="card-body">
+                                    <div >
+                                        <h5>
+                                            <label class="card-title "> @subForum.Title</label>
+                                        </h5>
+                                        <ul class="list-inline list-inline-dotted text-muted mb-0">
+                                            <li class="list-inline-item">By <a href="#" class="text-muted" data-abc="true">@subForum.OwnedBy.Username</a></li>
+                                            <li class="list-inline-item"> @subForum.CreatedAt.ToShortDateString()</li>
+                                        </ul>
+                                    </div>
+                                    <label>@GetDescToDisplay(subForum)</label>
+                                    @* <a href="#" data-abc="true">[...]</a> *@
+                                </div>
+                                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
+                                    <ul class="list-inline list-inline-dotted mb-0">
+                                        <li class="list-inline-item">
+                                            <span class="oi oi-eye"></span> @subForum.Views
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <span class="oi oi-star" style="color: yellowgreen"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="text-muted ml-1">(12)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-2 mt-sm-0">
+                                        <label> @subForum.AllPosts.Count posts </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+@*     </Authorized> *@
+@* </AuthorizeView> *@
+
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+
+    private Forum? forumToOpen;
+    //   private string errorLabel = String.Empty;
+
+    protected override async Task OnInitializedAsync() {
+        forumToOpen = await forumService.GetForumByIdAsync(Id);
+    // forumToOpen = new Forum("Computer science", "For software developers");
+    // forumToOpen.AllSubForums.Add(new SubForum(
+    //     new User("sachin123", "sachin123"),
+    //     "Is it the right time to switch to the .NET ??",
+    //     "JAVA 18 has recently released and community is raging on how shit it is. Is it really time to announce that JAVA is dead ??"));
+    // forumToOpen.AllSubForums.Add(new SubForum(
+    //     new User("troels123", "helloBrother121"),
+    //     ":NET programming has decided to get rid of null-pointer exception",
+    //     "The newest version of .NET programming has decided to get rid of null-pointer exception. They want programmers to specify the variable that could contain null values explicitly by giving a ? sign"));
+    }
+
+    private string GetDescToDisplay(SubForum subForum) {
+        if (subForum.Description.Length <= 200) {
+            return subForum.Description;
+        }
+        return subForum.Description.Substring(0, 200);
+    }
+
+    private void OpenCreateSubForum() {
+        navMgr.NavigateTo($"/CreateSubForum/{Id}");
+    }
+
+    private void OpenPosts(int id) {
+        navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
+        forumService.IncrementViewOfSubForumAsync(this.Id, id);
+    }
+
+}
+
+}

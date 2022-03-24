@@ -1,0 +1,78 @@
+﻿@page "/Create-Forum"
+@using Contracts
+@using Entities.Models
+@using UIElements
+@inject IForumService forumService
+@inject NavigationManager navMgr
+
+<AuthorizeView>
+    <Authorized>
+        <div class="box">
+            <h3> Create a Forum</h3>
+            <EditForm Context="formCtx" Model="@newForumItem" OnValidSubmit="@AddForum">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class="form-group field">
+                    <span>
+                        <label> Forum Name :</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
+                    </span>
+                </div>
+
+                <div class="form-group field">
+                    <span>
+                        <label> Description:</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
+                    </span>
+                </div>
+
+                <p class="actions">
+                    <button class="acceptbtn" type="submit"> Create Forum</button>
+                </p>
+            </EditForm>
+            @if (!string.IsNullOrEmpty(errorLabel)) {
+                <label> @errorLabel</label>
+            }
+            @if (showModal) {
+                <Modal>
+                    <p>New forum created</p>
+                    <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+                </Modal>
+            }
+        </div> 
+    </Authorized>
+    <NotAuthorized>
+        <NotLoggedIn>
+            <p> You need to be logged in, to create a forum. Please log in first..</p>
+        </NotLoggedIn>
+
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private Forum newForumItem = new Forum();
+    private string errorLabel = string.Empty;
+    private bool showModal;
+
+    private async Task AddForum() {
+        try {
+            await forumService.AddForumAsync(newForumItem);
+            showModal = true;
+            newForumItem = new Forum();
+          
+        }
+        catch (Exception e) {
+            errorLabel = e.Message;
+        }
+    }
+
+    private void Proceed() {
+        showModal = false;
+        navMgr.NavigateTo("/Forums");
+    }
+
+}

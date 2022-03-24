@@ -1,0 +1,113 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");*/
+
+body[b-9l94p9wxqz] {
+    background-color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300
+}
+
+.card[b-9l94p9wxqz] {
+    border: none
+}
+
+.ellipsis[b-9l94p9wxqz] {
+    color: #a09c9c
+}
+
+hr[b-9l94p9wxqz] {
+    color: #a09c9c;
+    margin-top: 4px;
+    margin-bottom: 8px
+}
+
+.muted-color[b-9l94p9wxqz] {
+    color: #a09c9c;
+    font-size: 13px
+}
+
+.ellipsis i[b-9l94p9wxqz] {
+    margin-top: 3px;
+    cursor: pointer
+}
+
+.icons i[b-9l94p9wxqz] {
+    font-size: 25px
+}
+
+.icons .fa-heart[b-9l94p9wxqz] {
+    color: red
+}
+
+.icons .fa-smile-o[b-9l94p9wxqz] {
+    color: yellow;
+    font-size: 29px
+}
+
+.rounded-image[b-9l94p9wxqz] {
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px
+}
+
+.name[b-9l94p9wxqz] {
+    font-weight: 600
+}
+
+.comment-text[b-9l94p9wxqz] {
+    font-size: 12px
+}
+
+.status small[b-9l94p9wxqz] {
+    margin-right: 10px;
+    color: blue
+}
+
+.form-control[b-9l94p9wxqz] {
+    border-radius: 26px
+}
+
+.comment-input[b-9l94p9wxqz] {
+    position: relative
+}
+
+.fonts[b-9l94p9wxqz] {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    color: #a09c9c
+}
+
+.form-control:focus[b-9l94p9wxqz] {
+    color: #495057;
+    background-color: #fff;
+    border-color: #8bbafe;
+    outline: 0;
+    box-shadow: none
+}
+.box[b-9l94p9wxqz]{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    padding: 25px;
+    text-align: center;
+    margin: 50px auto auto;
+}
+.field[b-9l94p9wxqz]{
+    margin-top: 20px;
+}
+.acceptbtn[b-9l94p9wxqz]{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.acceptbtn:hover[b-9l94p9wxqz]{
+    background-color: #00d900;
+}
+.body[b-9l94p9wxqz]  {
+    border:slategray solid;
+    border-radius: 8%;
+    box-shadow: 5px 10px #2196F3;
+}

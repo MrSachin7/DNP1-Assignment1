@@ -1,0 +1,80 @@
+﻿@page "/Create-Post/{ForumId:int}/{SubForumId:int}"
+@using Entities.Models
+@using Contracts
+@using UIElements
+@inject IForumService forumService;
+@inject NavigationManager navMgr
+<AuthorizeView>
+    <Authorized>
+        <div class="box">
+            <h3> Create a Post</h3>
+            <EditForm Context="formCtx" Model="@NewPostItem" OnValidSubmit="@((() => AddPost(context.User.Identity.Name)))">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <div class="form-group field">
+                    <span>
+                        <label> Header :</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="2" @bind-Value="NewPostItem.Header"/>
+                    </span>
+                </div>
+
+                <div class="form-group field">
+                    <span>
+                        <label> Content :</label>
+                    </span>
+                    <span>
+                        <InputTextArea rows="7" @bind-Value="NewPostItem.Body"/>
+                    </span>
+                </div>
+
+                <p class="actions">
+                    <button class="acceptbtn" type="submit"> Create Post</button>
+                </p>
+            </EditForm>
+            @if (!string.IsNullOrEmpty(errorLabel)) {
+                <label> @errorLabel</label>
+            }
+            @if (showModal) {
+                <Modal>
+                    <p>New post created</p>
+                    <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+                </Modal>
+            }
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <NotLoggedIn>
+            <p> You need to be logged in, to create a forum. Please log in first..</p>
+        </NotLoggedIn>
+
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+
+    [Parameter]
+    public int ForumId { get; set; }
+
+    [Parameter]
+    public int SubForumId { get; set; }
+
+    public Post NewPostItem = new Post();
+    private string errorLabel = string.Empty;
+    private bool showModal;
+
+    private async Task AddPost(string username) {
+        NewPostItem.WrittenBy = new User(username);
+        await forumService.AddPostAsync(NewPostItem, ForumId, SubForumId);
+        showModal = true;
+        NewPostItem = new Post();
+    }
+
+    private void Proceed() {
+        showModal = false;
+        navMgr.NavigateTo($"/All-Posts/{ForumId}/{SubForumId}");
+    }
+
+
+}

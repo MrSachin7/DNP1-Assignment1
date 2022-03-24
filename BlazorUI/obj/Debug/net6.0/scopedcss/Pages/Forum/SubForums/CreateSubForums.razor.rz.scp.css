@@ -1,0 +1,20 @@
+.box[b-1khyo0e2ef]{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 80%;
+    padding: 25px;
+    text-align: center;
+    margin: 50px auto auto;
+}
+
+.field[b-1khyo0e2ef]{
+    margin-top: 20px;
+}
+.acceptbtn[b-1khyo0e2ef]{
+    background-color: lightgreen;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.acceptbtn:hover[b-1khyo0e2ef]{
+    background-color: #00d900;
+}

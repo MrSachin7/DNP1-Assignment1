@@ -21,9 +21,9 @@ public class UserDAOImpl : IUserDAO {
         return allUsers.Any(user => user.Username.Equals(username));
     }
 
-    public async Task<User> GetUserAsync(string username) {
+    public Task<User> GetUserAsync(string username) {
         List<User> users = fileContext.Users.ToList();
         User? find= users.Find(user => user.Username.Equals(username));
-        return find;
+        return Task.FromResult(find);
     }
 }

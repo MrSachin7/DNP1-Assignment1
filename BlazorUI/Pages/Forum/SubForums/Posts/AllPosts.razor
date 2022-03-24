@@ -1,0 +1,103 @@
+﻿@page "/All-Posts/{ForumId:int}/{SubForumId:int}"
+@using Entities.Models
+@using Contracts
+@inject IForumService forumService
+@inject NavigationManager navMgr
+
+
+@if (SubForumToOpen == null) {
+    <p>
+        <em> Loading....</em>
+    </p>
+}
+else {
+    <AuthorizeView>
+        <Authorized>
+            <button class="btn-outline-primary" @onclick="() => OpenCreatePost()"> Create Post</button>
+        </Authorized>
+    </AuthorizeView>
+
+    if (!SubForumToOpen.AllPosts.Any()) {
+        <p>
+            <em> No posts available...</em>
+        </p>
+    }
+    else {
+        @foreach (Post post in SubForumToOpen.AllPosts) {
+           <div class="container">
+    <div class="row g-3 mt-5 mb-5">
+        <div class="col-md-9"  @onclick="@(() =>OpenPost(post))">
+            <div class="card body">
+                <div class="card-body"> <span class="text-danger fw-bold fs-6">By @post.WrittenBy.Username</span> 
+                     <h4 class="card-title text-dark mt-2">@post.Header</h4>
+                    <p class="card-text">@DescriptionToDisplay(post) .....<small> Read more ....</small></p>
+                    <div class="mt-4 about d-flex justify-content-between align-items-center">
+                        <span>
+                            <small> @GetTimeToDisplay(post) </small>
+                        </span>
+                        <span>
+                            <small>@post.Comments.Count comments  </small>
+                        </span>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        }
+    }
+}
+
+@code {
+    private SubForum? SubForumToOpen;
+
+    [Parameter]
+    public int ForumId { get; set; }
+
+    [Parameter]
+    public int SubForumId { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+    //  allPosts = await forumService.GetAllPostsAsync(ForumId, SubForumId); 
+    //     allPosts = new List<Post>();
+    //     allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+    //                                                                         "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
+    //     allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+    //                                                                         "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
+    //     allPosts.Add(new Post("The dotnet watch functionality not working", "I am trying to do the Blazor stuff for the past few" +
+    //                                                                         "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
+    // }
+
+        SubForumToOpen = await forumService.GetSubForumAsync(ForumId, SubForumId);
+    }
+
+    private async Task OpenPost(Post post) {
+        navMgr.NavigateTo($"/ViewPost/{ForumId}/{SubForumId}/{post.Id}");
+    }
+
+    private string DescriptionToDisplay(Post post) {
+        if (post.Body.Length <= 200) {
+            return post.Body;
+        }
+        return post.Body.Substring(0, 200);
+    }
+
+    private void OpenCreatePost() {
+        navMgr.NavigateTo($"/Create-Post/{ForumId}/{SubForumId}");
+    }
+    private string GetTimeToDisplay(Post post) {
+        if ((DateTime.Now - post.CreatedAt).Minutes == 0) {
+            return $"{(DateTime.Now - post.CreatedAt).Seconds} seconds ago";
+        }
+
+        if ((DateTime.Now - post.CreatedAt).Hours == 0) {
+            return $"{(DateTime.Now - post.CreatedAt).Minutes} minutes ago";
+        }
+        if ((DateTime.Now - post.CreatedAt).Days == 0) {
+            int hours = (DateTime.Now - post.CreatedAt).Hours;
+            return $"{hours} hours ago";
+        }
+        return $"{(DateTime.Now - post.CreatedAt).Days} days ago";
+    }
+
+}
