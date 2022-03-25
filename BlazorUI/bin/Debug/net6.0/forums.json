@@ -9,7 +9,7 @@
         "Title": "FIFA World Cup 2022",
         "Description": "Discussions related FIFA World Cup 2022 here",
         "CreatedAt": "2022-03-24T08:53:29.5409679+01:00",
-        "Views": 0,
+        "Views": 1,
         "Id": 1,
         "AllPosts": []
       },
@@ -21,7 +21,7 @@
         "Title": "UEFA Champions League",
         "Description": "Discussions related UEFA Champions league here",
         "CreatedAt": "2022-03-24T08:56:12.0930036+01:00",
-        "Views": 0,
+        "Views": 1,
         "Id": 2,
         "AllPosts": []
       },
@@ -53,7 +53,7 @@
     "ForumName": "Football",
     "ForumDescription": "The forum for football fans",
     "Id": 1,
-    "Views": 5
+    "Views": 6
   },
   {
     "AllSubForums": [
@@ -65,7 +65,7 @@
         "Title": "JAVA",
         "Description": "Discussion related to JAVA",
         "CreatedAt": "2022-03-23T21:44:17.1960333+01:00",
-        "Views": 12,
+        "Views": 21,
         "Id": 1,
         "AllPosts": [
           {
@@ -120,7 +120,7 @@
         "Title": ".NET Programming",
         "Description": "Discussions related to .NET programming",
         "CreatedAt": "2022-03-23T21:44:39.6950824+01:00",
-        "Views": 4,
+        "Views": 9,
         "Id": 2,
         "AllPosts": [
           {
@@ -144,7 +144,7 @@
         "Title": "OOP V Functional programming",
         "Description": "People exressing their opinions either OOP or functional programming is the future.",
         "CreatedAt": "2022-03-23T21:47:15.9124418+01:00",
-        "Views": 1,
+        "Views": 2,
         "Id": 3,
         "AllPosts": []
       },
@@ -156,7 +156,7 @@
         "Title": "C programming",
         "Description": "The sub forum for C lovers",
         "CreatedAt": "2022-03-23T21:51:29.1461021+01:00",
-        "Views": 0,
+        "Views": 1,
         "Id": 4,
         "AllPosts": []
       }
@@ -164,14 +164,27 @@
     "ForumName": "Programming",
     "ForumDescription": "The forum for computer programmers",
     "Id": 2,
-    "Views": 27
+    "Views": 34
   },
   {
-    "AllSubForums": [],
+    "AllSubForums": [
+      {
+        "OwnedBy": {
+          "Username": "Journalist Dawson",
+          "Password": null
+        },
+        "Title": "Russia invades Ukraine",
+        "Description": "Russia has invaded ukraine. Give your opinions here...",
+        "CreatedAt": "2022-03-24T09:11:45.5347509+01:00",
+        "Views": 0,
+        "Id": 1,
+        "AllPosts": []
+      }
+    ],
     "ForumName": "Politics",
     "ForumDescription": "Topics related politics can be discussed here.",
     "Id": 3,
-    "Views": 0
+    "Views": 2
   },
   {
     "AllSubForums": [],

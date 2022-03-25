@@ -65,7 +65,7 @@
         "Title": "JAVA",
         "Description": "Discussion related to JAVA",
         "CreatedAt": "2022-03-23T21:44:17.1960333+01:00",
-        "Views": 17,
+        "Views": 22,
         "Id": 1,
         "AllPosts": [
           {
@@ -120,7 +120,7 @@
         "Title": ".NET Programming",
         "Description": "Discussions related to .NET programming",
         "CreatedAt": "2022-03-23T21:44:39.6950824+01:00",
-        "Views": 8,
+        "Views": 9,
         "Id": 2,
         "AllPosts": [
           {
@@ -164,7 +164,7 @@
     "ForumName": "Programming",
     "ForumDescription": "The forum for computer programmers",
     "Id": 2,
-    "Views": 29
+    "Views": 35
   },
   {
     "AllSubForums": [
