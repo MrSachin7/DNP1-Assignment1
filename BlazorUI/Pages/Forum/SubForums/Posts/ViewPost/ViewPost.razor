@@ -1,8 +1,7 @@
 ﻿@page "/ViewPost/{ForumId:int}/{SubForumId:int}/{PostId:int}"
 @using Contracts
 @using Entities.Models
-@using System.IO.Pipes
-@inject IForumService forumService; 
+@inject IForumService forumService
 @inject NavigationManager navMgr
 
 
@@ -201,7 +200,7 @@ else {
 
     private async Task DeletePressed(Comment comment) {
         Comment commentFromDb = await forumService.DeleteComment(ForumId, SubForumId, PostId, comment);
-        postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id==commentFromDb.Id)));
+        postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id == commentFromDb.Id)));
     }
 
 }
