@@ -11,7 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
+      <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\JsonDataAccess\JsonDataAccess.csproj" />
     </ItemGroup>
 
 </Project>

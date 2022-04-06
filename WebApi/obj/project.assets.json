@@ -72,6 +72,57 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Contracts": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
+      },
+      "JsonDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/JsonDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JsonDataAccess.dll": {}
+        }
       }
     }
   },
@@ -200,10 +251,32 @@
         "swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
+    "Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "JsonDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../JsonDataAccess/JsonDataAccess.csproj",
+      "msbuildProject": "../JsonDataAccess/JsonDataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Application >= 1.0.0",
+      "JsonDataAccess >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -231,7 +304,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj": {
+              "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj"
+            },
+            "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj": {
+              "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
