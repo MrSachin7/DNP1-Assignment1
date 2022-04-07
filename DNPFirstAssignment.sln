@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonDataAccess", "JsonDataA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{6AE5F344-06FB-4C1C-9F19-8D7AB2440D3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpServices", "HttpServices\HttpServices.csproj", "{5DB6AE3E-2595-4CB0-8AAC-FCB7DE105544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{6AE5F344-06FB-4C1C-9F19-8D7AB2440D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AE5F344-06FB-4C1C-9F19-8D7AB2440D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AE5F344-06FB-4C1C-9F19-8D7AB2440D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB6AE3E-2595-4CB0-8AAC-FCB7DE105544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB6AE3E-2595-4CB0-8AAC-FCB7DE105544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB6AE3E-2595-4CB0-8AAC-FCB7DE105544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB6AE3E-2595-4CB0-8AAC-FCB7DE105544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

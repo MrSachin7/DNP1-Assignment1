@@ -24,6 +24,9 @@ public class UserDAOImpl : IUserDAO {
     public Task<User> GetUserAsync(string username) {
         List<User> users = fileContext.Users.ToList();
         User? find= users.Find(user => user.Username.Equals(username));
+        if (find==null) {
+            throw new Exception("Username doesnt exist");
+        }
         return Task.FromResult(find);
     }
 }

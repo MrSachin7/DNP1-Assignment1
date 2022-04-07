@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpClient\\HttpClient.csproj": {}
+  },
+  "projects": {
+    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj",
+        "projectName": "Contracts",
+        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpClient\\HttpClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpClient\\HttpClient.csproj",
+        "projectName": "HttpClient",
+        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpClient\\HttpClient.csproj",
+        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
+        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj": {
+                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj"
+              },
+              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

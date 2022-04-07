@@ -65,7 +65,7 @@
         "Title": "JAVA",
         "Description": "Discussion related to JAVA",
         "CreatedAt": "2022-03-23T21:44:17.1960333+01:00",
-        "Views": 43,
+        "Views": 44,
         "Id": 1,
         "AllPosts": [
           {
@@ -242,7 +242,7 @@
     "ForumName": "Programming",
     "ForumDescription": "The forum for computer programmers",
     "Id": 2,
-    "Views": 56
+    "Views": 58
   },
   {
     "AllSubForums": [

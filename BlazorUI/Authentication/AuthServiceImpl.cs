@@ -50,9 +50,9 @@ public class AuthServiceImpl : IAuthService {
     }
 
     private void ValidateLoginCredentials(string password, User user) {
-        if (user == null) {
-            throw new Exception("Username not found");
-        }
+        // if (user == null) {
+        //     throw new Exception("Username not found");
+        // }
 
         if (!password.Equals(user.Password)) {
             throw new Exception("Password Incorrect");
