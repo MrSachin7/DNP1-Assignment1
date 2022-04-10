@@ -18,7 +18,7 @@ public class ForumController : ControllerBase {
     public async Task<ActionResult<Forum>> AddForumAsync([FromBody] Forum forum) {
         try {
             Forum forumFromServer = await forumService.AddForumAsync(forum);
-            return Ok(forumFromServer);
+            return Created($"/{forumFromServer.Id}", forumFromServer);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
@@ -65,7 +65,7 @@ public class ForumController : ControllerBase {
     public async Task<ActionResult<SubForum>> AddSubForumAsync([FromRoute] int forumId, [FromBody] SubForum subForum) {
         try {
             SubForum addSubForumAsync = await forumService.AddSubForumAsync(subForum, forumId);
-            return Ok(addSubForumAsync);
+            return Created($"/{forumId}/{addSubForumAsync.Id}", addSubForumAsync);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
@@ -90,7 +90,7 @@ public class ForumController : ControllerBase {
         [FromBody] Post post) {
         try {
             Post addPostAsync = await forumService.AddPostAsync(post, forumId, subforumId);
-            return Ok(addPostAsync);
+            return Created($"/{forumId}/{subforumId}/{addPostAsync.Id}",addPostAsync);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
@@ -128,7 +128,7 @@ public class ForumController : ControllerBase {
         [FromRoute] int postId, [FromBody] Comment comment) {
         try {
             Comment commentToPost = await forumService.AddCommentToPost(forumId, subForumId, postId, comment);
-            return Ok(commentToPost);
+            return Created($"/{forumId}/{subForumId}/{postId}/{commentToPost.Id}", commentToPost);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);

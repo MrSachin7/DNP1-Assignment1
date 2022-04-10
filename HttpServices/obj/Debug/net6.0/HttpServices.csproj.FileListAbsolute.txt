@@ -1,0 +1,17 @@
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\HttpServices.deps.json
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\HttpServices.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\ref\HttpServices.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\HttpServices.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\Contracts.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\Entities.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\Contracts.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\bin\Debug\net6.0\Entities.pdb
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.csproj.AssemblyReference.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.GeneratedMSBuildEditorConfig.editorconfig
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfoInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.AssemblyInfo.cs
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CoreCompileInputs.cache
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.csproj.CopyComplete
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\ref\HttpServices.dll
+D:\SEM 3\SEM3\DNP1\DNP1-Assignment-1\DNPFirstAssignment\HttpServices\obj\Debug\net6.0\HttpServices.pdb
