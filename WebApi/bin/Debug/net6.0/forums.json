@@ -9,7 +9,7 @@
         "Title": "FIFA World Cup 2022",
         "Description": "Discussions related FIFA World Cup 2022 here",
         "CreatedAt": "2022-03-24T08:53:29.5409679+01:00",
-        "Views": 4,
+        "Views": 3,
         "Id": 1,
         "AllPosts": []
       },
@@ -65,7 +65,7 @@
     "ForumName": "Football",
     "ForumDescription": "The forum for football fans",
     "Id": 1,
-    "Views": 7
+    "Views": 6
   },
   {
     "AllSubForums": [
@@ -254,7 +254,7 @@
     "ForumName": "Programming",
     "ForumDescription": "The forum for computer programmers",
     "Id": 2,
-    "Views": 59
+    "Views": 58
   },
   {
     "AllSubForums": [

@@ -50,7 +50,7 @@ else {
 @code {
     private List<Forum>? allForums;
 
-    protected override async void OnInitialized() {
+    protected override async Task OnInitializedAsync() {
         allForums = await forumService.GetAllForumsAsync();
     }
 
