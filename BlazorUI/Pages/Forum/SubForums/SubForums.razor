@@ -90,15 +90,7 @@
 
     protected override async Task OnInitializedAsync() {
         forumToOpen = await forumService.GetForumByIdAsync(Id);
-    // forumToOpen = new Forum("Computer science", "For software developers");
-    // forumToOpen.AllSubForums.Add(new SubForum(
-    //     new User("sachin123", "sachin123"),
-    //     "Is it the right time to switch to the .NET ??",
-    //     "JAVA 18 has recently released and community is raging on how shit it is. Is it really time to announce that JAVA is dead ??"));
-    // forumToOpen.AllSubForums.Add(new SubForum(
-    //     new User("troels123", "helloBrother121"),
-    //     ":NET programming has decided to get rid of null-pointer exception",
-    //     "The newest version of .NET programming has decided to get rid of null-pointer exception. They want programmers to specify the variable that could contain null values explicitly by giving a ? sign"));
+   
     }
 
     private string GetDescToDisplay(SubForum subForum) {
