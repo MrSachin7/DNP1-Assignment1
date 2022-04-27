@@ -68,7 +68,7 @@ else {
     //                                                                         "days but for some wierd reason the dotnet watch functionality is not working . Please help me", new Entities.Models.User("dotnetGUY", "dotnetBolte123")));
     // }
 
-        SubForumToOpen = await forumService.GetSubForumAsync(ForumId, SubForumId);
+        SubForumToOpen = await forumService.GetSubForumAsync(SubForumId);
     }
 
     private async Task OpenPost(Post post) {

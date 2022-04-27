@@ -66,7 +66,7 @@
 
     private async Task AddPost(string username) {
         NewPostItem.WrittenBy = new User(username);
-        await forumService.AddPostAsync(NewPostItem, ForumId, SubForumId);
+        await forumService.AddPostAsync(NewPostItem, SubForumId);
         showModal = true;
         NewPostItem = new Post();
     }

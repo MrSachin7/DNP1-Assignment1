@@ -4,7 +4,7 @@ using Entities.Models;
 
 namespace JsonDataAccess;
 
-public class ForumDAOImpl : IForumDAO {
+public class ForumDAOImpl{
     private JsonForumContext fileContext;
 
     public ForumDAOImpl(JsonForumContext FileContext) {
@@ -95,7 +95,7 @@ public class ForumDAOImpl : IForumDAO {
         commentFromDb.Id = editedComment.Id;
         commentFromDb.Writer = editedComment.Writer;
         commentFromDb.CreatedAt = editedComment.CreatedAt;
-        commentFromDb.ParentComment = editedComment.ParentComment;
+     
         await fileContext.SaveChangesAsync();
         return commentFromDb;
     }

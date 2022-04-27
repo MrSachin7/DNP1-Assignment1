@@ -106,7 +106,7 @@
 
     private void OpenPosts(int id) {
         navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
-        forumService.IncrementViewOfSubForumAsync(this.Id, id);
+        forumService.IncrementViewOfSubForumAsync(this.Id);
     }
     
 

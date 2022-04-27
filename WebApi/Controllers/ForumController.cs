@@ -49,10 +49,10 @@ public class ForumController : ControllerBase {
     }
 
     [HttpGet]
-    [Route("{forumId:int}/{subForumId:int}")]
-    public async Task<ActionResult<SubForum>> GetSubForumAsync([FromRoute] int forumId, [FromRoute] int subForumId) {
+    [Route("/SubForum/{subForumId:int}")]
+    public async Task<ActionResult<SubForum>> GetSubForumAsync( [FromRoute] int subForumId) {
         try {
-            SubForum? subForumAsync = await forumService.GetSubForumAsync(forumId, subForumId);
+            SubForum? subForumAsync = await forumService.GetSubForumAsync(subForumId);
             return Ok(subForumAsync);
         }
         catch (Exception e) {
@@ -85,12 +85,12 @@ public class ForumController : ControllerBase {
     }
 
     [HttpPost]
-    [Route("{forumId:int}/{subforumId:int}")]
-    public async Task<ActionResult<Post>> AddPostAsync([FromRoute] int forumId, [FromRoute] int subforumId,
+    [Route("/Post/{subforumId:int}")]
+    public async Task<ActionResult<Post>> AddPostAsync([FromRoute] int subforumId,
         [FromBody] Post post) {
         try {
-            Post addPostAsync = await forumService.AddPostAsync(post, forumId, subforumId);
-            return Created($"/{forumId}/{subforumId}/{addPostAsync.Id}",addPostAsync);
+            Post addPostAsync = await forumService.AddPostAsync(post, subforumId);
+            return Created($"/{subforumId}/{addPostAsync.Id}", addPostAsync);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
@@ -98,10 +98,10 @@ public class ForumController : ControllerBase {
     }
 
     [HttpPatch]
-    [Route("IncrementView/{forumId:int}/{subforumId:int}")]
-    public async Task<ActionResult> IncrementViewOfSubForumAsync([FromRoute] int forumId, [FromRoute] int subforumId) {
+    [Route("IncrementViewSubForum/{subforumId:int}")]
+    public async Task<ActionResult> IncrementViewOfSubForumAsync([FromRoute] int subforumId) {
         try {
-            await forumService.IncrementViewOfSubForumAsync(forumId, subforumId);
+            await forumService.IncrementViewOfSubForumAsync(subforumId);
             return Ok();
         }
         catch (Exception e) {
@@ -110,11 +110,11 @@ public class ForumController : ControllerBase {
     }
 
     [HttpGet]
-    [Route("{forumId:int}/{subforumId:int}/{postId:int}")]
-    public async Task<ActionResult<Post>> GetPostAsync([FromRoute] int forumId, [FromRoute] int subforumId,
+    [Route("/Post/{postId:int}")]
+    public async Task<ActionResult<Post>> GetPostAsync(
         [FromRoute] int postId) {
         try {
-            Post? postAsync = await forumService.GetPostAsync(forumId, subforumId, postId);
+            Post? postAsync = await forumService.GetPostAsync(postId);
             return Ok(postAsync);
         }
         catch (Exception e) {
@@ -123,12 +123,12 @@ public class ForumController : ControllerBase {
     }
 
     [HttpPost]
-    [Route("{forumId:int}/{subforumId:int}/{postId:int}")]
-    public async Task<ActionResult<Comment>> AddCommentToPostAsync([FromRoute] int forumId, [FromRoute] int subForumId,
+    [Route("Comment/{postId:int}")]
+    public async Task<ActionResult<Comment>> AddCommentToPostAsync(
         [FromRoute] int postId, [FromBody] Comment comment) {
         try {
-            Comment commentToPost = await forumService.AddCommentToPost(forumId, subForumId, postId, comment);
-            return Created($"/{forumId}/{subForumId}/{postId}/{commentToPost.Id}", commentToPost);
+            Comment commentToPost = await forumService.AddCommentToPost(postId, comment);
+            return Created($"/{postId}/{commentToPost.Id}", commentToPost);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
@@ -136,11 +136,11 @@ public class ForumController : ControllerBase {
     }
 
     [HttpPut]
-    [Route("{forumId:int}/{subforumId:int}/{postId:int}")]
-    public async Task<ActionResult<Comment>> EditCommentAsync([FromRoute] int forumId, [FromRoute] int subforumId,
-        [FromRoute] int postId, [FromBody] Comment editedComment) {
+    [Route("Comment")]
+    public async Task<ActionResult<Comment>> EditCommentAsync(
+      [FromBody] Comment editedComment) {
         try {
-            Comment editedFromServer = await forumService.EditComment(forumId, subforumId, postId, editedComment);
+            Comment editedFromServer = await forumService.EditComment(editedComment);
             return Ok(editedFromServer);
         }
         catch (Exception e) {
@@ -149,16 +149,15 @@ public class ForumController : ControllerBase {
     }
 
     [HttpDelete]
-    [Route("{forumId:int}/{subforumId:int}/{postId:int}/{commentId:int}")]
-    public async Task<ActionResult<Comment>> DeleteCommentAsync([FromRoute] int forumId, [FromRoute] int subforumId,
-        [FromRoute] int postId, [FromRoute] int commentId) {
+    [Route("Comment")]
+    public async Task<ActionResult<Comment>> DeleteCommentAsync(
+        [FromRoute] int commentId) {
         try {
-            Comment deleteComment = await forumService.DeleteComment(forumId, subforumId, postId, commentId);
+            Comment deleteComment = await forumService.DeleteComment(commentId);
             return Ok(deleteComment);
         }
         catch (Exception e) {
             return StatusCode(500, e.Message);
         }
     }
-
 }

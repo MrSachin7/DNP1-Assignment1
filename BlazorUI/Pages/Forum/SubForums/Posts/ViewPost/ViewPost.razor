@@ -131,7 +131,7 @@ else {
     private Comment editedComment = new Comment();
 
     protected override async Task OnInitializedAsync() {
-        postToOpen = await forumService.GetPostAsync(ForumId, SubForumId, PostId);
+        postToOpen = await forumService.GetPostAsync(PostId);
     // postToOpen.Body = "Boyzz and girls";
     // Comment tempComment = new Comment();
     // tempComment.Body = "Wonderful|||";
@@ -150,8 +150,8 @@ else {
             comment.Body = commentToPost;
             comment.Writer = new User(username);
             comment.CreatedAt = DateTime.Now;
-            comment.ParentComment = null;
-            Comment commentFromDb = await forumService.AddCommentToPost(ForumId, SubForumId, PostId, comment);
+        
+            Comment commentFromDb = await forumService.AddCommentToPost( PostId, comment);
             postToOpen?.Comments.Add(commentFromDb);
         }
         commentToPost = string.Empty;
@@ -177,7 +177,7 @@ else {
         if (string.IsNullOrEmpty(editedComment.Body)) {
             return;
         }
-        Comment comment = await forumService.EditComment(ForumId, SubForumId, PostId, editedComment);
+        Comment comment = await forumService.EditComment(editedComment);
         Comment localComment = postToOpen.Comments.First(comment1 => comment1.Id == editedComment.Id);
         postToOpen.Comments.Remove(localComment);
         postToOpen.Comments.Add(comment);
@@ -189,7 +189,6 @@ else {
         editedComment.Id = comment.Id;
         editedComment.Writer = comment.Writer;
         editedComment.CreatedAt = comment.CreatedAt;
-        editedComment.ParentComment = comment.ParentComment;
         editedComment.Body = comment.Body;
         showModal = true;
     }
@@ -199,7 +198,7 @@ else {
     }
 
     private async Task DeletePressed(Comment comment) {
-        Comment commentFromDb = await forumService.DeleteComment(ForumId, SubForumId, PostId, comment.Id);
+        Comment commentFromDb = await forumService.DeleteComment( comment.Id);
         postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id == commentFromDb.Id)));
     }
 

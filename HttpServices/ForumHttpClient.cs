@@ -38,10 +38,10 @@ public class ForumHttpClient : IForumService {
         return allForumsFromServer;
     }
 
-    public async Task<SubForum?> GetSubForumAsync(int forumId, int subForumId) {
+    public async Task<SubForum?> GetSubForumAsync(int subForumId) {
         using HttpClient client = new HttpClient();
         HttpResponseMessage responseMessage =
-            await client.GetAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}");
+            await client.GetAsync($"https://localhost:7028/SubForum/{subForumId}");
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         SubForum subForumFromServer = GetDeserialized<SubForum>(responseContent);
@@ -69,64 +69,64 @@ public class ForumHttpClient : IForumService {
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
     }
 
-    public async Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId) {
+    public async Task<Post> AddPostAsync(Post newPostItem,int subForumId) {
         using HttpClient client = new HttpClient();
         string postAsJson = JsonSerializer.Serialize(newPostItem);
         StringContent content = new StringContent(postAsJson, Encoding.UTF8, "application/json");
         HttpResponseMessage responseMessage =
-            await client.PostAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}", content);
+            await client.PostAsync($"https://localhost:7028/Post/{subForumId}", content);
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         Post postFromServer = GetDeserialized<Post>(responseContent);
         return postFromServer;
     }
 
-    public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
+    public async Task IncrementViewOfSubForumAsync(int subForumId) {
         using HttpClient client = new HttpClient();
         HttpResponseMessage responseMessage =
-            await client.PatchAsync($"https://localhost:7028/Forum/IncrementView/{forumId}/{subForumId}", null);
+            await client.PatchAsync($"https://localhost:7028/Forum/IncrementViewSubForum/{subForumId}", null);
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
     }
 
-    public async Task<Post?> GetPostAsync(int forumId, int subForumId, int postId) {
+    public async Task<Post?> GetPostAsync(int postId) {
         using HttpClient client = new HttpClient();
         HttpResponseMessage responseMessage =
-            await client.GetAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}/{postId}");
+            await client.GetAsync($"https://localhost:7028/Post/{postId}");
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         Post postFromServer = GetDeserialized<Post>(responseContent);
         return postFromServer;
     }
 
-    public async Task<Comment> AddCommentToPost(int forumId, int subForumId, int postId, Comment commentToPost) {
+    public async Task<Comment> AddCommentToPost( int postId, Comment commentToPost) {
         using HttpClient client = new HttpClient();
         string commentAsJson = JsonSerializer.Serialize(commentToPost);
         StringContent content = new StringContent(commentAsJson, Encoding.UTF8, "application/json");
         HttpResponseMessage responseMessage =
-            await client.PostAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}/{postId}", content);
+            await client.PostAsync($"https://localhost:7028/Forum/Comment/{postId}", content);
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         Comment commentFromServer = GetDeserialized<Comment>(responseContent);
         return commentFromServer;
     }
 
-    public async Task<Comment> EditComment(int forumId, int subForumId, int postId, Comment editedComment) {
+    public async Task<Comment> EditComment( Comment editedComment) {
         using HttpClient client = new HttpClient();
         string commentAsJson = JsonSerializer.Serialize(editedComment);
         StringContent content = new StringContent(commentAsJson, Encoding.UTF8, "application/json");
         HttpResponseMessage responseMessage =
-            await client.PutAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}/{postId}", content);
+            await client.PutAsync($"https://localhost:7028/Forum/Comment", content);
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         Comment commentFromServer = GetDeserialized<Comment>(responseContent);
         return commentFromServer;
     }
 
-    public async Task<Comment> DeleteComment(int forumId, int subForumId, int postId, int commentId) {
+    public async Task<Comment> DeleteComment( int commentId) {
         using HttpClient client = new HttpClient();
         HttpResponseMessage responseMessage =
-            await client.DeleteAsync($"https://localhost:7028/Forum/{forumId}/{subForumId}/{postId}/{commentId}");
+            await client.DeleteAsync($"https://localhost:7028/Forum/Comment/{commentId}");
         string responseContent =
             await GetResponseContentFromResponseMessageAndThrowAppropriateException(responseMessage);
         Comment comment = GetDeserialized<Comment>(responseContent);
