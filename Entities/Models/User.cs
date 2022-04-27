@@ -2,7 +2,7 @@
 
 public class User {
     public string Username { get; set; }
-    public  string Password { get; set; }
+    public  string? Password { get; set; }
 
     public User(string Username, string Password) {
         this.Username = Username;
@@ -11,6 +11,7 @@ public class User {
 
     public User(string Username) {
         this.Username = Username;
+        Password = null;
     }
 
     public User() {

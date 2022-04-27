@@ -1,4 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿
 using Application;
 using Entities.Models;
 
@@ -20,7 +20,7 @@ public class ForumDAOImpl : IForumDAO {
         return forum.AllSubForums.First(subForum => subForum.Id == subForumId);
     }
 
-    public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) {
+    public async Task<SubForum> AddSubForumAsync(SubForum newSubForumItem, int forumId) {
         Forum forumById = await GetForumByIdAsync(forumId);
         if (forumById.AllSubForums.Any()) {
             int largestId = forumById.AllSubForums.Max(subForum => subForum.Id);
@@ -33,6 +33,7 @@ public class ForumDAOImpl : IForumDAO {
         newSubForumItem.CreatedAt = DateTime.Now;
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.Add(newSubForumItem);
         await fileContext.SaveChangesAsync();
+        return newSubForumItem;
     }
 
     public async Task IncrementViewOfForumAsync(int forumId) {
@@ -40,7 +41,7 @@ public class ForumDAOImpl : IForumDAO {
         await fileContext.SaveChangesAsync();
     }
 
-    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) {
+    public async Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId) {
         SubForum? subForum = (await GetSubForumAsync(forumId, subForumId));
         if (subForum.AllPosts.Any()) {
             int largestId = subForum.AllPosts.Max(post => post.Id);
@@ -54,6 +55,7 @@ public class ForumDAOImpl : IForumDAO {
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums.First(subForum => subForum.Id == subForumId)
             .AllPosts.Add(newPostItem);
         await fileContext.SaveChangesAsync();
+        return newPostItem;
     }
 
     public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
@@ -98,10 +100,10 @@ public class ForumDAOImpl : IForumDAO {
         return commentFromDb;
     }
 
-    public async Task<Comment> DeleteComment(int forumId, int subForumId, int postId, Comment comment) {
+    public async Task<Comment> DeleteComment(int forumId, int subForumId, int postId, int commentId) {
         Comment commentFromDb = fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums
             .First(subForum => subForum.Id == subForumId).AllPosts.First(post => post.Id == postId).Comments
-            .First(comment1 => comment1.Id == comment.Id);
+            .First(comment1 => comment1.Id == commentId);
         fileContext.Forums.First(forum => forum.Id == forumId).AllSubForums
             .First(subForum => subForum.Id == subForumId).AllPosts.First(post => post.Id == postId).Comments
             .Remove(commentFromDb);
@@ -110,7 +112,7 @@ public class ForumDAOImpl : IForumDAO {
 
     }
 
-    public async Task AddForumAsync(Forum newForumItem) {
+    public async Task<Forum> AddForumAsync(Forum newForumItem) {
         //  Console.WriteLine("ForumDAO");
         if (fileContext.Forums.Any()) {
             int largestId = fileContext.Forums.Max(forum => forum.Id);
@@ -122,6 +124,7 @@ public class ForumDAOImpl : IForumDAO {
 
         fileContext.Forums.Add(newForumItem);
         await fileContext.SaveChangesAsync();
+        return newForumItem;
     }
 
     public async Task<Forum> GetForumByIdAsync(int id) {

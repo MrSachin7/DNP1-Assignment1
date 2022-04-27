@@ -1,11 +1,7 @@
-using Application;
 using BlazorLogin.Authentication;
 using BlazorUI.Authentication;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using BlazorUI.Data;
 using Contracts;
-using JsonDataAccess;
+using HttpServices;
 using Microsoft.AspNetCore.Components.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,12 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<JsonUserContext>();
-builder.Services.AddScoped<JsonForumContext>();
-builder.Services.AddScoped<IForumDAO, ForumDAOImpl>();
-builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
-builder.Services.AddScoped<IUserService, UserServiceImpl>();
-builder.Services.AddScoped<IForumService, ForumServiceImpl>();
+builder.Services.AddScoped<IUserService, UserHttpClient>();
+builder.Services.AddScoped<IForumService, ForumHttpClient>();
 builder.Services.AddScoped<AuthenticationStateProvider, SimpleAuthenticationStateProvider>();
 builder.Services.AddScoped<IAuthService, AuthServiceImpl>();
 

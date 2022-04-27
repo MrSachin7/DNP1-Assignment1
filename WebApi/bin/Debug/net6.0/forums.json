@@ -1,0 +1,300 @@
+[
+  {
+    "AllSubForums": [
+      {
+        "OwnedBy": {
+          "Username": "Cristiano Ronaldo",
+          "Password": null
+        },
+        "Title": "FIFA World Cup 2022",
+        "Description": "Discussions related FIFA World Cup 2022 here",
+        "CreatedAt": "2022-03-24T08:53:29.5409679+01:00",
+        "Views": 4,
+        "Id": 1,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "Cristiano Ronaldo",
+          "Password": null
+        },
+        "Title": "UEFA Champions League",
+        "Description": "Discussions related UEFA Champions league here",
+        "CreatedAt": "2022-03-24T08:56:12.0930036+01:00",
+        "Views": 2,
+        "Id": 2,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "Lionel Messi",
+          "Password": null
+        },
+        "Title": "Ligue 1",
+        "Description": "Ligue 1 is the best league in the world .Lets goooo",
+        "CreatedAt": "2022-03-24T08:57:11.1940023+01:00",
+        "Views": 0,
+        "Id": 3,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "Lionel Messi",
+          "Password": null
+        },
+        "Title": "Premiere League",
+        "Description": "Discussion related to the PL here",
+        "CreatedAt": "2022-03-24T08:59:01.3305909+01:00",
+        "Views": 0,
+        "Id": 4,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "xfgdfgfdfgfdg",
+        "Description": "srrgdrgdsg",
+        "CreatedAt": "2022-04-10T22:21:32.4912696+02:00",
+        "Views": 0,
+        "Id": 5,
+        "AllPosts": []
+      }
+    ],
+    "ForumName": "Football",
+    "ForumDescription": "The forum for football fans",
+    "Id": 1,
+    "Views": 7
+  },
+  {
+    "AllSubForums": [
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "JAVA",
+        "Description": "Discussion related to JAVA",
+        "CreatedAt": "2022-03-23T21:44:17.1960333+01:00",
+        "Views": 46,
+        "Id": 1,
+        "AllPosts": [
+          {
+            "Header": "Is it finally the time to announce that JAVA is dead ??",
+            "Body": "JAVA 18 has been recently released and the developers could not be anymore disappointed than this. Another update and another shit-housery from the JAVA devs. No real update since JAVA8 and JAVA-lovers are just fed up at this point. The community is raging and a mass portion of them are trying to switch to the .NET programming due its constant update. Fellow developers , please dont hesitate to give your opinions.",
+            "WrittenBy": {
+              "Username": "sachin123",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-23T21:57:41.3050267+01:00",
+            "Id": 1,
+            "Comments": [
+              {
+                "Body": " I agree, JAVA has been long dead. People should have realized this earlier. But better late than never, i guess.. But we .NET developers promise that we will welcome you guys with love",
+                "Writer": {
+                  "Username": "Troels Mortensen",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-23T22:03:57.3929219+01:00",
+                "Id": 1
+              },
+              {
+                "Body": "JAVA is shit. C# is best ",
+                "Writer": {
+                  "Username": "Microsoft",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-23T22:05:21.3570679+01:00",
+                "Id": 2
+              },
+              {
+                "Body": "I am also going to make my employees use .NET from now on. No JAVA on facebook  #SayNoToJAVA",
+                "Writer": {
+                  "Username": "Mark Zuckerberg",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-23T22:06:38.9732947+01:00",
+                "Id": 3
+              },
+              {
+                "Body": "Never gonna give you up        Never gonna let you down          Never gonna run around  and         desert you Never gonna make you cry                  Never gonna say goodbye                 Never gonna tell a lie and hurt you",
+                "Writer": {
+                  "Username": "Rick Astley",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-26T13:26:39.446124+01:00",
+                "Id": 4
+              }
+            ]
+          },
+          {
+            "Header": "Minecraft mod using JAVA",
+            "Body": "I am trying to create a masterpiece of a minecraft mod using JAVA starting from tomorrow. If anyone is interested , send me a message at  thejavagod12@java.com",
+            "WrittenBy": {
+              "Username": "Java God",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-26T13:29:03.1960925+01:00",
+            "Id": 2,
+            "Comments": []
+          },
+          {
+            "Header": "Never gonna give you up",
+            "Body": "zvczxcvsdvxdfv",
+            "WrittenBy": {
+              "Username": "Rick Astley",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-26T13:40:12.3728667+01:00",
+            "Id": 3,
+            "Comments": [
+              {
+                "Body": "fgjhgf",
+                "Writer": {
+                  "Username": "Rick Astley",
+                  "Password": null
+                },
+                "ParentComment": null,
+                "CreatedAt": "2022-03-26T13:40:19.9549339+01:00",
+                "Id": 1
+              }
+            ]
+          },
+          {
+            "Header": "new post",
+            "Body": "sdfsdfsdfs",
+            "WrittenBy": {
+              "Username": "Rick Astley",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-26T13:47:31.6962935+01:00",
+            "Id": 4,
+            "Comments": []
+          }
+        ]
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": ".NET Programming",
+        "Description": "Discussions related to .NET programming",
+        "CreatedAt": "2022-03-23T21:44:39.6950824+01:00",
+        "Views": 14,
+        "Id": 2,
+        "AllPosts": [
+          {
+            "Header": ":NET 6.5 has been released and its controversial.",
+            "Body": "Hello fellow developers !!. .NET 6.5 has been put forward yesterday. The release documentation stated that the new version is getting rid of the null-pointer exception. The developers need to specify now, with a very cheeky \u0022?\u0022 sign to let the compiler know the variable is nullable. According to the .NET devs , null-pointer exception was the last year\u0027s biggest nightmare as reports suggests it was 49.253% of time the main reason over 27.36% of company crashing over. However, the reaction from the community is mixed. Most old devs are criticizing this saying , its not because of the exception but due to the new noob devs while majority of new programmers adore the concept.",
+            "WrittenBy": {
+              "Username": "Sachin Baral",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-24T09:04:42.3214064+01:00",
+            "Id": 1,
+            "Comments": []
+          }
+        ]
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "OOP V Functional programming",
+        "Description": "People exressing their opinions either OOP or functional programming is the future.",
+        "CreatedAt": "2022-03-23T21:47:15.9124418+01:00",
+        "Views": 5,
+        "Id": 3,
+        "AllPosts": [
+          {
+            "Header": "IS OOP the worst thing happened to the programming world ??",
+            "Body": "\u0022OOP is the alternative way to the correct way of programming\u0022-some random dude.\n\n",
+            "WrittenBy": {
+              "Username": "Sachin Baral",
+              "Password": null
+            },
+            "CreatedAt": "2022-03-26T13:22:39.9148196+01:00",
+            "Id": 1,
+            "Comments": []
+          }
+        ]
+      },
+      {
+        "OwnedBy": {
+          "Username": "sachin123",
+          "Password": null
+        },
+        "Title": "C programming",
+        "Description": "The sub forum for C lovers",
+        "CreatedAt": "2022-03-23T21:51:29.1461021+01:00",
+        "Views": 2,
+        "Id": 4,
+        "AllPosts": []
+      },
+      {
+        "OwnedBy": {
+          "Username": "Rick Astley",
+          "Password": null
+        },
+        "Title": "Assembly",
+        "Description": "afasdfsdw",
+        "CreatedAt": "2022-03-26T13:47:55.4709487+01:00",
+        "Views": 0,
+        "Id": 5,
+        "AllPosts": []
+      }
+    ],
+    "ForumName": "Programming",
+    "ForumDescription": "The forum for computer programmers",
+    "Id": 2,
+    "Views": 59
+  },
+  {
+    "AllSubForums": [
+      {
+        "OwnedBy": {
+          "Username": "Journalist Dawson",
+          "Password": null
+        },
+        "Title": "Russia invades Ukraine",
+        "Description": "Russia has invaded ukraine. Give your opinions here...",
+        "CreatedAt": "2022-03-24T09:11:45.5347509+01:00",
+        "Views": 0,
+        "Id": 1,
+        "AllPosts": []
+      }
+    ],
+    "ForumName": "Politics",
+    "ForumDescription": "Topics related politics can be discussed here.",
+    "Id": 3,
+    "Views": 2
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": "Chess",
+    "ForumDescription": "The forum for people who enjoy chess",
+    "Id": 4,
+    "Views": 2
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": "Minecraft",
+    "ForumDescription": "The discussions on Minecraft are done here",
+    "Id": 5,
+    "Views": 0
+  },
+  {
+    "AllSubForums": [],
+    "ForumName": "Movies",
+    "ForumDescription": "You can give your opinion on different movies here",
+    "Id": 6,
+    "Views": 0
+  }
+]

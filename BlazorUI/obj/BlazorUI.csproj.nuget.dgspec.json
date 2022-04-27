@@ -4,65 +4,6 @@
     "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\BlazorUI.csproj": {}
   },
   "projects": {
-    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj": {
-                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj"
-              },
-              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
     "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\BlazorUI\\BlazorUI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -85,11 +26,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj": {
-                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj"
-              },
-              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj": {
-                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj"
+              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\HttpServices.csproj": {
+                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\HttpServices.csproj"
               }
             }
           }
@@ -233,14 +171,14 @@
         }
       }
     },
-    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj": {
+    "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\HttpServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj",
-        "projectName": "JsonDataAccess",
-        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\JsonDataAccess.csproj",
+        "projectUniqueName": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\HttpServices.csproj",
+        "projectName": "HttpServices",
+        "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\HttpServices.csproj",
         "packagesPath": "C:\\Users\\nepal\\.nuget\\packages\\",
-        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\JsonDataAccess\\obj\\",
+        "outputPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\HttpServices\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nepal\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -255,8 +193,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj": {
-                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Application\\Application.csproj"
+              "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj": {
+                "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Contracts\\Contracts.csproj"
               },
               "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj": {
                 "projectPath": "D:\\SEM 3\\SEM3\\DNP1\\DNP1-Assignment-1\\DNPFirstAssignment\\Entities\\Entities.csproj"
