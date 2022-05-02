@@ -149,7 +149,7 @@ public class ForumController : ControllerBase {
     }
 
     [HttpDelete]
-    [Route("Comment")]
+    [Route("Comment/{commentId:int}")]
     public async Task<ActionResult<Comment>> DeleteCommentAsync(
         [FromRoute] int commentId) {
         try {

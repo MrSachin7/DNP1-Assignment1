@@ -198,7 +198,7 @@ else {
     }
 
     private async Task DeletePressed(Comment comment) {
-        Comment commentFromDb = await forumService.DeleteComment( comment.Id);
+        Comment commentFromDb = await forumService.DeleteComment(comment.Id);
         postToOpen.Comments.Remove((postToOpen.Comments.First(comment1 => comment1.Id == commentFromDb.Id)));
     }
 
