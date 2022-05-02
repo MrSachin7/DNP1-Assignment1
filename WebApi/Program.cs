@@ -1,5 +1,6 @@
 using Application;
 using Contracts;
+using EFCData;
 using JsonDataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,10 +13,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserService, UserServiceImpl>();
 builder.Services.AddScoped<IForumService, ForumServiceImpl>();
-builder.Services.AddScoped<IUserDAO, UserDAOImpl>();
-builder.Services.AddScoped<IForumDAO, ForumDAOImpl>();
-builder.Services.AddScoped<JsonForumContext>();
-builder.Services.AddScoped<JsonUserContext>();
+builder.Services.AddDbContext<ForumContext>();
+builder.Services.AddScoped<IUserDAO, UserSQLDAO>();
+builder.Services.AddScoped<IForumDAO, ForumSQLDAO>();
+
 
 var app = builder.Build();
 

@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\EFCData\EFCData.csproj" />
       <ProjectReference Include="..\JsonDataAccess\JsonDataAccess.csproj" />
     </ItemGroup>
 

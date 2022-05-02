@@ -1,4 +1,6 @@
-﻿namespace Entities.Models; 
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Entities.Models; 
 
 public class SubForum {
     public User OwnedBy { get; set; }
@@ -9,6 +11,8 @@ public class SubForum {
 
     public int Views { get; set; }
 
+
+    [Key]
     public int Id { get; set; }
 
     public ICollection<Post> AllPosts { get; set; }

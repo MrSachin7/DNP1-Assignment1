@@ -85,12 +85,13 @@
     [Parameter]
     public int Id { get; set; }
 
-    private Forum? forumToOpen;
+    private Forum forumToOpen = new Forum();
     //   private string errorLabel = String.Empty;
 
     protected override async Task OnInitializedAsync() {
         forumToOpen = await forumService.GetForumByIdAsync(Id);
-   
+        int i = 0;
+
     }
 
     private string GetDescToDisplay(SubForum subForum) {
@@ -106,7 +107,7 @@
 
     private void OpenPosts(int id) {
         navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
-        forumService.IncrementViewOfSubForumAsync(this.Id, id);
+        forumService.IncrementViewOfSubForumAsync(this.Id);
     }
     
 
