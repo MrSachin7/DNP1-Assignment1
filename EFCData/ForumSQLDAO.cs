@@ -23,8 +23,12 @@ public class ForumSQLDAO : IForumDAO {
     }
 
     public async Task<Forum> GetForumByIdAsync(int id) {
-        Forum forum = context.Forums.Include(forum => forum.AllSubForums).ThenInclude(subForum => subForum.AllPosts)
-            .ThenInclude(post => post.Comments).First(forum => forum.Id == id);
+        Forum forum = context.Forums.Include(forum => forum.AllSubForums)
+            .ThenInclude(subForum => subForum.AllPosts) // todo ask troels how to also include OwnedBy here....
+            .ThenInclude(post => post.Comments)
+            .Include(forum1 => forum1.AllSubForums)
+            .ThenInclude(subForum => subForum.OwnedBy)
+            .First(forum => forum.Id == id);
         return forum;
     }
 
@@ -33,11 +37,9 @@ public class ForumSQLDAO : IForumDAO {
     }
 
     public async Task<SubForum?> GetSubForumAsync(int subForumId) {
-        IIncludableQueryable<SubForum,ICollection<Post>> queryable = context.SubForums.Include(subForum => subForum.AllPosts);
-        queryable.Include(forum => forum.OwnedBy);
-        queryable.ThenInclude(post => post.Comments);
-       return queryable.First(subForum => subForum.Id == subForumId);
-        
+        SubForum subForum = await context.SubForums.Include(forum => forum.AllPosts).Include(forum => forum.OwnedBy)
+            .FirstAsync(forum => forum.Id == subForumId);
+        return subForum;
     }
 
     public async Task<SubForum> AddSubForumAsync(SubForum newSubForumItem, int forumId) {
@@ -67,59 +69,57 @@ public class ForumSQLDAO : IForumDAO {
     }
 
     public async Task<Post> AddPostAsync(Post newPostItem, int subForumId) {
-        SubForum? subForum =await context.SubForums.FindAsync(subForumId);
+        SubForum? subForum = await context.SubForums.FindAsync(subForumId);
+        User? user = await context.Users.FindAsync(newPostItem.WrittenBy.Username);
+
+
         if (subForum is null) {
             throw new Exception($"Cannot find the subforum with id : {subForumId}");
         }
+
+        newPostItem.WrittenBy = user;
         subForum.AllPosts.Add(newPostItem);
+
         await context.SaveChangesAsync();
         return newPostItem;
     }
 
     public async Task IncrementViewOfSubForumAsync(int subForumId) {
-        var first =await context.SubForums.FindAsync(subForumId);
+        var first = await context.SubForums.FindAsync(subForumId);
         if (first is null) {
             throw new Exception($"Cannot find the subForum with the id ; {subForumId}");
         }
+
         first.Views++;
         await context.SaveChangesAsync();
     }
 
     public async Task<Post?> GetPostAsync(int postId) {
-        Post? post = context.Posts.Include(post1 => post1.Comments).First(post => post.Id == postId);
+        Post? post = context.Posts.Include(post1 => post1.Comments)
+            .Include(post1 => post1.WrittenBy)
+            .First(post => post.Id == postId);
         return post;
     }
 
     public async Task<Comment> AddCommentToPost(int postId, Comment commentToPost) {
         Post post = context.Posts.First(post1 => post1.Id == postId);
+        User? findAsync = await context.Users.FindAsync(commentToPost.Writer.Username);
+        commentToPost.Writer = findAsync!;
         post.Comments.Add(commentToPost);
         await context.SaveChangesAsync();
         return commentToPost;
     }
 
     public async Task<Comment> EditComment(Comment editedComment) {
-        Comment comment = context.Comments.First(comment1 => comment1.Id == editedComment.Id);
-        comment.Body = editedComment.Body;
+        EntityEntry<Comment> update = context.Comments.Update(editedComment);
         await context.SaveChangesAsync();
-        return comment;
+        return update.Entity;
     }
 
     public async Task<Comment> DeleteComment(int commentId) {
-        Comment comment = await context.Comments.FirstAsync(comment1 => comment1.Id == commentId);
-        context.Comments.Remove(comment);
-        await context.SaveChangesAsync();
-        return comment;
-    }
-
-    public async Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId) {
-        EntityEntry<Post> entityEntry = await context.Posts.AddAsync(newPostItem);
+        Comment? async = await context.Comments.FindAsync(commentId);
+        EntityEntry<Comment> entityEntry = context.Comments.Remove(async);
         await context.SaveChangesAsync();
         return entityEntry.Entity;
-    }
-
-    public async Task IncrementViewOfSubForumAsync(int forumId, int subForumId) {
-        SubForum subForum = context.SubForums.First(subForum => subForum.Id == subForumId);
-        subForum.Views++;
-        await context.SaveChangesAsync();
     }
 }

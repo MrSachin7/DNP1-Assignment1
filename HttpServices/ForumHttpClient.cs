@@ -1,12 +1,11 @@
-﻿using System.Net;
-using System.Reflection.Metadata;
+﻿
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Contracts;
 using Entities.Models;
 
 namespace HttpServices;
-
 public class ForumHttpClient : IForumService {
     public async Task<Forum> AddForumAsync(Forum newForumItem) {
         using HttpClient client = new HttpClient();
@@ -101,7 +100,9 @@ public class ForumHttpClient : IForumService {
 
     public async Task<Comment> AddCommentToPost( int postId, Comment commentToPost) {
         using HttpClient client = new HttpClient();
-        string commentAsJson = JsonSerializer.Serialize(commentToPost);
+        string commentAsJson = JsonSerializer.Serialize(commentToPost, new JsonSerializerOptions() {
+            ReferenceHandler = ReferenceHandler.Preserve
+        });
         StringContent content = new StringContent(commentAsJson, Encoding.UTF8, "application/json");
         HttpResponseMessage responseMessage =
             await client.PostAsync($"https://localhost:7028/Forum/Comment/{postId}", content);

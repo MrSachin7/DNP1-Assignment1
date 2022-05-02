@@ -14,7 +14,7 @@ public class AuthServiceImpl : IAuthService {
 
     public AuthServiceImpl(IUserService userService, IJSRuntime jsRunTime) {
         this.userService = userService;
-        this.jsRunTime = jsRunTime;
+        this.jsRunTime = jsRunTime;      
         principal = null;
     }
 
